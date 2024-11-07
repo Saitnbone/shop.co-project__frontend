@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+# Shop.co (RU) React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Используемый стек:** HTML, SASS, React, TypeScript, RTK, Tanstack/React Query, Storybook, Jest, Cypress.
 
-Currently, two official plugins are available:
+## Описание проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Данный репозиторий представляет собой фронтенд часть e-commerce веб приложени интернет магазина shop.co на создание простого приложения с фронтендом и бекендом, развернутого с использованием Render. Проект разработан с использованием React и TypeScript для фронтенда и Express с TypeScript для бэкенда. Основной функционал включает регистрацию новых пользователей, оформление заказов и оплаты товаров с выбором способа и метода доставки.
 
-## Expanding the ESLint configuration
+## Основные аспекты
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. Инструкции по настройке проекта
 
-- Configure the top-level `parserOptions` property like this:
+Клонирование и установка:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Клонируйте репозиторий
+
+```
+git clone https://github.com/Saitnbone/shop.co-project__frontend.git
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Запуск проекта
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+npm install
+npm run dev
+```
+
+### 2. Стилистические особенности проекта
+
+- Использован Vite для сборки проекта и ускорения разработки.
+- Стиль реализован с помощью Material UI, как указано в требованиях задания. Это позволяет легко настроить настроить стили, быструю настройку тегов и единообразный UI.
+- SEO: Vite позволяет задавать заголовки, метатеги, которые могут быть определены для улучшения SEO.
+- Использование семантических тегов, что также влияет на более качественное SEO.
+
+# Shop.co (ENG) React + TypeScript + Vite
+
+**Tech Stack:** HTML, SASS, React, TypeScript, RTK, Tanstack/React Query, Storybook, Jest, Cypress.
+
+## Project Description
+
+This repository represents the front-end part of the e-commerce web application of the online store shop.co for creating a simple application with front-end and back-end, deployed using Render. The project was developed using React and TypeScript for the frontend and Express with TypeScript for the backend. The main functionality includes registering new users, placing orders and paying for goods with a choice of delivery method and method.
+
+# Key Aspects
+
+### 1. Project Setup Instructions
+
+Cloning and Installation:
+
+1. Clone the repository
+
+```
+git clone https://github.com/Saitnbone/shop.co-project__frontend.git
+```
+
+2. Start the project
+
+```
+npm install
+npm run dev
+```
+
+### 2. Stylistic features of the project
+
+- Used Vite to build the project and speed up development.
+- Styling implemented using Material UI as specified in the job requirements. This makes it easy to customize styles, quick tag customization, and a consistent UI.
+- SEO: Vite allows you to set titles, meta tags that can be defined to improve SEO.
+- Use of semantic tags, which also affects better SEO.
