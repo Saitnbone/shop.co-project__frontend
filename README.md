@@ -33,6 +33,8 @@ npm run dev
 - SEO: Vite позволяет задавать заголовки, метатеги, которые могут быть определены для улучшения SEO.
 - Использование семантических тегов, что также влияет на более качественное SEO.
 
+[Ссылка на макет](<https://www.figma.com/design/CkASwGlVLwskObZC31RCuY/E-commerce-Website-Template-(Freebie)-(Community)?node-id=0-1&t=5XDfBwuAVXJS1KC8-0>)
+
 # Shop.co (ENG) React + TypeScript + Vite
 
 **Tech Stack:** HTML, SASS, React, TypeScript, RTK, Tanstack/React Query, Storybook, Jest, Cypress.
@@ -66,3 +68,5 @@ npm run dev
 - Styling implemented using Material UI as specified in the job requirements. This makes it easy to customize styles, quick tag customization, and a consistent UI.
 - SEO: Vite allows you to set titles, meta tags that can be defined to improve SEO.
 - Use of semantic tags, which also affects better SEO.
+
+[Link to layout](<https://www.figma.com/design/CkASwGlVLwskObZC31RCuY/E-commerce-Website-Template-(Freebie)-(Community)?node-id=0-1&t=5XDfBwuAVXJS1KC8-0>)
