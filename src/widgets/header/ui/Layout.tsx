@@ -5,8 +5,10 @@ import { UiMenu } from './components/menu/Menu';
 export const UiHeader: React.FC<TUiHeader> = ({ logo, dropDown }) => {
   return (
     <header className={s.header}>
-      <div>{logo}</div>
-      <UiMenu dropDown={dropDown} />
+      <div className={s.headerBlock}>
+        {logo}
+        <UiMenu dropDown={dropDown} />
+      </div>
     </header>
   );
 };

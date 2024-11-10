@@ -1,6 +1,5 @@
-import s from './styles.module.scss';
+import s from '../../styles.module.scss';
 import { TUiMenu } from '@/widgets/header/types';
-// import {DropdownUI} from "../../../../../shared/ui/dropdown/Dropdown.tsx";
 
 export const UiMenu: React.FC<TUiMenu> = ({ dropDown }) => {
   return (
