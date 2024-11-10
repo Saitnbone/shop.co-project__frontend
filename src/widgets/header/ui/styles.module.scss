@@ -1,0 +1,18 @@
+.header {
+  padding: 30px;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+
+  &Block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
