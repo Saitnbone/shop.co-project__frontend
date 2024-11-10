@@ -1,16 +1,14 @@
-import './App.css'
-import {LogoUI} from "../shared/ui/logo";
-import {MenuUI} from "../widgets/header/ui/components/menu/Menu.tsx";
+import './App.css';
+// import {LogoUI} from "../shared/ui/logo";
+// import {MenuUI} from "../widgets/header/ui/components/menu/Menu.tsx";
+import { Header } from '@/widgets/header';
 
 function App() {
-
   return (
     <>
-      <LogoUI/>
-      <MenuUI/>
+      <Header />
     </>
-  )
-
+  );
 }
 
-export default App
+export default App;
