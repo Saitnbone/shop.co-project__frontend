@@ -1,0 +1,37 @@
+.dropdown {
+  position: relative;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+span {
+  height: 16px;
+}
+
+.menu {
+  position: absolute;
+  top: 32px;
+  padding: 16px;
+  border-radius: 4px;
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  background-color: #ffffff;
+  filter: drop-shadow(3px 3px 4px rgba(51, 51, 51, .3));
+}
+
+.menu::before {
+  content: "";
+  border-bottom: 20px solid #fff;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  position: absolute;
+  top: -10px;
+  left: 5px;
+}
