@@ -25,7 +25,7 @@ export const DropdownUI = () => {
 
   return (
     <div className={s.dropdown} ref={dropdown}>
-      <a className={s.menuItem} onClick={handleDropdownClick}>Shop
+      <a className={isOpen ? `${s.menuItem} ${s.active}` : s.menuItem} onClick={handleDropdownClick}>Shop
         <span>{isOpen ? <IoIosArrowUp/> : <IoIosArrowDown/>}</span>
       </a>
       {isOpen && (
