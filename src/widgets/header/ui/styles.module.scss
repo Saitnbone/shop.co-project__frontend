@@ -16,3 +16,41 @@
   align-items: center;
   gap: 24px;
 }
+
+.iconsBlock {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.profileIcon {
+  block-size: 30px;
+  inline-size: 30px;
+}
+
+.cartIcon {
+  block-size: 30px;
+  inline-size: 30px;
+}
+
+// Медиазапросы для иконок профиля и корзины
+
+@media (hover: hover) {
+  .cartIcon:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .profileIcon:hover {
+    opacity: 0.5;
+  }
+}
+
+@media (hover: none) {
+  .cartIcon:active {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .profileIcon:active {
+    opacity: 0.5;
+  }
+}
