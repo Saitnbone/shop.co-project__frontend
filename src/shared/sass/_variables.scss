@@ -1,0 +1,145 @@
+@import './fonts/fonts';
+
+:root {
+  // font
+  --font-family-accent: 'Integral CF', system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  --font-family-primary: 'Satoshi-Variable', system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+
+  // font-weight
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  // font line normal
+  --font-line-normal: normal;
+
+  // font accent desktop
+  // xl
+  --font-size-accent-d-xl: 64px;
+  --font-line-accent-d-xl: 64px;
+
+  // l
+  --font-size-accent-d-l: 48px;
+  --font-line-accent-d-l: 57.6px; // normal
+
+  // m
+  --font-size-accent-d-m: 40px;
+  --font-line-accent-d-m: 45px;
+
+  // font accent mobile
+  //xl
+  --font-size-accent-m-xl: 36px;
+  --font-line-accent-m-xl: 34px;
+
+  // l
+  --font-size-accent-m-l: 32px;
+  --font-line-accent-m-l: 38.4px; // normal
+  --font-line-accent-m-l-2: 35px;
+  --font-line-accent-m-l-3: 36x;
+
+  // m
+  --font-size-accent-m-m: 24px;
+  --font-line-accent-m-m: 28px;
+
+  /*
+  // font accent size desktop
+  --font-size-accent-d-xl: 64px;
+  --font-size-accent-d-l: 48px;
+  --font-size-accent-d-m: 40px;
+
+  // font accent size mobile
+  --font-size-accent-m-xl: 36px;
+  --font-size-accent-m-l: 32px;
+  --font-size-accent-m-m: 24px;
+
+  // font accent line desktop
+  --font-line-accent-d-xl: 64px;
+  --font-line-accent-d-l: 57.6px; // normal
+  --font-line-accent-d-m: 45px;
+
+  // font accent line mobile
+  --font-line-accent-m-xl: 34px;
+  --font-line-accent-m-l: 38.4px; // normal
+  --font-line-accent-m-l-2: 36px;
+  --font-line-accent-m-l-3: 35px;
+  --font-line-accent-m-m: 28px;
+   */
+
+  // font primary size
+  --font-size-primary-3xl: 40px;
+  --font-size-primary-xxl: 36px;
+  --font-size-primary-xl: 32px;
+  --font-size-primary-l: 24px;
+  --font-size-primary-m: 20px;
+  --font-size-primary-s: 16px;
+  --font-size-primary-xs: 14px;
+  --font-size-primary-xxs: 12px;
+
+  // font primary line
+  --font-line-primary-3xl: 54px; // normal
+  --font-line-primary-xxl: 48.6x; // normal
+  --font-line-primary-xl: 43.2px; // normal
+  --font-line-primary-l: 32.4px; // normal
+  --font-line-primary-m: 22px;
+  --font-line-primary-m-2: 27px; // normal
+  --font-line-primary-s: 21.6px; // normal
+  --font-line-primary-s-2: 22px;
+  --font-line-primary-s-3: 19px;
+  --font-line-primary-s-4: 18px;
+  --font-line-primary-xs: 16px;
+  --font-line-primary-xs-2: 18px;
+  --font-line-primary-xs-3: 18.9px; // normal
+  --font-line-primary-xs-4: 20px;
+  --font-line-primary-xs-5: 22px;
+  --font-line-primary-xxs: 16.2px; // normal
+
+  // colors
+  --color-primary: #fff;
+  --color-secondary: #f0f0f0;
+  --color-secondary-1: #f0eeed;
+  --color-secondary-2: #f2f0f1;
+  --color-dark-primary: #000;
+  --color-dark-secondary-60: #00000099;
+  --color-dark-secondary-50: #00000080;
+  --color-dark-secondary-40: #00000066;
+  --color-dark-secondary-30: #0000004d;
+  --color-dark-secondary-20: #00000033;
+  --color-dark-secondary-10: #0000001a;
+
+  --color-accent-yellow: #ffc633;
+  --color-accent-green: #01ab31;
+  --color-accent-red: #ff3333;
+  --color-accent-red-10: #ff33331a;
+
+  --color-filters-1: #00c12b;
+  --color-filters-2: #f50606;
+  --color-filters-3: #f5dd06;
+  --color-filters-4: #f57906;
+  --color-filters-5: #06caf5;
+  --color-filters-6: #063af5;
+  --color-filters-7: #7d06f5;
+  --color-filters-8: #7d06f5;
+
+  // bg colors
+  --color-bg-primary: var(--color-primary);
+  --color-bg-secondary: var(--color-secondary);
+  --color-bg-card: var(--color-secondary-1);
+  --color-bg-cover: var(--color-secondary-2);
+  --color-bg-accent: var(--color-accent-red-10);
+
+  // text colors
+  --color-text-primary: var(--color-dark-primary);
+  --color-text-60: var(--color-dark-secondary-60);
+  --color-text-50: var(--color-dark-secondary-50);
+  --color-text-40: var(--color-dark-secondary-40);
+  --color-text-30: var(--color-dark-secondary-30);
+  --color-text-20: var(--color-dark-secondary-20);
+  --color-text-accent: var(--color-accent-red);
+  --color-text-on-dark: var(--color-primary);
+
+  // border colors
+  --color-border-primary: var(--color-dark-secondary-10);
+  --color-border-select: var(--color-dark-primary);
+}
