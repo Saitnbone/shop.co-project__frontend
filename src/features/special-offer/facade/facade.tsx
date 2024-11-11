@@ -1,0 +1,1 @@
+export const SpecialOffer: React.FC = () => { return null}
