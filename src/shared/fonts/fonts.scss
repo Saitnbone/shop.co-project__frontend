@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Satoshi-Variable';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src:
+    url('./Satoshi/Satoshi-Variable.woff2') format('woff2'),
+    url('./Satoshi/Satoshi-Variable.woff') format('woff'),
+    url('./Satoshi/Satoshi-Variable.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src:
+    url('./IntegralCF/IntegralCF-Regular.woff2') format('woff2'),
+    url('./IntegralCF/IntegralCF-Regular.woff') format('woff'),
+    url('./IntegralCF/IntegralCF-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src:
+    url('./IntegralCF/IntegralCF-Bold.woff2') format('woff2'),
+    url('./IntegralCF/IntegralCF-Bold.woff') format('woff'),
+    url('./IntegralCF/IntegralCF-Bold.ttf') format('truetype');
+}
