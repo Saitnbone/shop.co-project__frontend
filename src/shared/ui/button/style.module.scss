@@ -1,0 +1,25 @@
+.button {
+  border-radius: 62px;
+}
+
+.button:disabled {
+  opacity: 0.6;
+}
+
+.colorPrimary {
+  background: var(--color-btn-primary);
+}
+.colorSecondary {
+  background: var(--color-secondary);
+}
+.colorOutline {
+  border: 1px solid var(----color-dark-secondary-10);
+  background: transparent;
+}
+.colorIcon {
+  background: transparent;
+}
+
+.rounded {
+  border-radius: 50%;
+}

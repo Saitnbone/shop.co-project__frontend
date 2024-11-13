@@ -5,6 +5,24 @@
   right: 50%;
   margin-inline: -50vw;
   background-color: var(--color-bg-dark);
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.fadeOut {
+  animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 }
 
 .content {
@@ -19,6 +37,7 @@
   color: var(--color-text-on-dark);
   position: relative;
 }
+
 .text {
   font-size: clamp(var(--font-size-primary-xxs), 0.7036rem + 0.1905vw, var(--font-size-primary-xs));
 }
@@ -27,8 +46,9 @@
   font-weight: var(--font-weight-medium);
   border-bottom: 1px solid var(--color-text-on-dark);
 
-  &:hover{
+  &:hover {
     color: var(--color-text-accent);
+    border-color: var(--color-text-accent);
   }
   &:focus-visible {
     outline: 1px solid var(--color-text-accent);
@@ -36,17 +56,17 @@
   }
 }
 
-.button {
+.buttonCross {
   position: absolute;
   right: clamp(30px, -0.4521rem + 7.4468vw, 100px);
 
-    &:hover, {
-      color: var(--color-text-accent);
-    }
-    &:focus-visible {
-      outline: 1px solid var(--color-text-accent);
-      outline-offset: 1px;
-    }
+  &:hover {
+    color: var(--color-text-accent);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--color-text-accent);
+    outline-offset: 1px;
+  }
 }
 
 @media (max-width: 390px) {
@@ -56,7 +76,7 @@
 }
 
 @media (max-width: 500px) {
-  .button {
+  .buttonCross {
     display: none;
   }
 }
