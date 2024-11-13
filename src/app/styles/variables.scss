@@ -1,5 +1,3 @@
-@import '../../shared/fonts/fonts';
-
 :root {
   // font
   --font-family-accent: 'Integral CF', system-ui, Avenir, Helvetica, Arial,
@@ -128,6 +126,7 @@
   --color-bg-card: var(--color-secondary-1);
   --color-bg-cover: var(--color-secondary-2);
   --color-bg-accent: var(--color-accent-red-10);
+  --color-bg-dark: var(--color-dark-primary);
 
   // text colors
   --color-text-primary: var(--color-dark-primary);
@@ -142,4 +141,8 @@
   // border colors
   --color-border-primary: var(--color-dark-secondary-10);
   --color-border-select: var(--color-dark-primary);
+
+  // btn colors
+  --color-btn-primary: var(--color-dark-primary);
+  --color-btn-secondary: var(--color-secondary);
 }
