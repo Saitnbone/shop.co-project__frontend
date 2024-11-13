@@ -1,9 +1,9 @@
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.svg';
 
 export const LogoUI = () => {
   return (
     <>
-      <img src={logo} alt="Logo"/>
+      <img loading="lazy" src={logo} alt="Logo" />
     </>
-  )
-}
+  );
+};
