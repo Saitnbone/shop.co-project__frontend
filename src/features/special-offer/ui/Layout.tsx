@@ -4,6 +4,7 @@ import { RxCross1 } from 'react-icons/rx';
 import { ButtonColor, ButtonType } from '@/shared/ui/button/types.ts';
 import clsx from 'clsx';
 import { useState } from 'react';
+import { FullBg } from '@/shared/ui/fullBg';
 
 export const UISpecialOffer = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -21,8 +22,8 @@ export const UISpecialOffer = () => {
 
   return (
     isVisible && (
-      <div
-        className={clsx(s.fullBg, isClosing && s.fadeOut)}
+      <FullBg
+        className={clsx(s.container, isClosing && s.fadeOut)}
         onAnimationEnd={handleAnimationEnd}
       >
         <section className={s.content}>
@@ -41,7 +42,7 @@ export const UISpecialOffer = () => {
             <RxCross1 />
           </Button>
         </section>
-      </div>
+      </FullBg>
     )
   );
 };

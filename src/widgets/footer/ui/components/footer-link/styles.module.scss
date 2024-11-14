@@ -1,0 +1,16 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 0.7679rem + 0.9524vw, 1.625rem);
+}
+
+.title {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
