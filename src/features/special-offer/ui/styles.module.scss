@@ -1,0 +1,75 @@
+.container {
+  background-color: var(--color-bg-dark);
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+
+}
+
+.fadeOut {
+  animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 9px;
+  color: var(--color-text-on-dark);
+  position: relative;
+}
+
+.text {
+  font-size: clamp(var(--font-size-primary-xxs), 0.7036rem + 0.1905vw, var(--font-size-primary-xs));
+}
+
+.link {
+  font-weight: var(--font-weight-medium);
+  border-bottom: 1px solid var(--color-text-on-dark);
+
+  &:focus-visible {
+    outline: 1px solid var(--color-text-on-dark);
+    outline-offset: 1px;
+  }
+}
+
+.buttonCross {
+  position: absolute;
+  right: clamp(30px, -0.4521rem + 7.4468vw, 100px);
+  bottom: 5px;
+
+  &:hover {
+    color: var(--color-text-accent);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--color-text-on-dark);
+    outline-offset: 1px;
+  }
+}
+
+@media (max-width: 390px) {
+  .text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttonCross {
+    display: none;
+  }
+}

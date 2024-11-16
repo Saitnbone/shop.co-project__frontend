@@ -1,0 +1,98 @@
+.bg {
+  background: var(--color-bg-secondary);
+}
+
+.footer {
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding-block-start: clamp(8.75rem, 13.0357rem + -4.7619vw, 11.875rem);
+  padding-block-end: clamp(4.8125rem, 4.6964rem + 0.4762vw, 5.125rem);
+  padding-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
+}
+
+.footerBlock {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: clamp(1.5rem, -0.5661rem + 8.4762vw, 7.0625rem);
+  row-gap: clamp(2.5rem, 2.2679rem + 0.9524vw, 3.125rem);
+  color: var(--color-text-60);
+}
+
+.blockLogo {
+  flex: 1 1 5%;
+
+  .text {
+    padding-block-start: clamp(0.875rem, 0.6196rem + 1.0476vw, 1.5625rem);
+    padding-block-end: clamp(1.25rem, 0.9018rem + 1.4286vw, 2.1875rem);
+    font-size: var(--font-size-primary-xs);
+    line-height: clamp(
+      var(--font-line-primary-xs-4),
+      1.2036rem + 0.1905vw,
+      var(--font-line-primary-xs-5)
+    );
+  }
+
+  .social {
+    display: flex;
+    gap: 10px;
+    font-size: 24px;
+    color: var(--color-text-primary);
+
+    .socialIcon:hover {
+      color: var(--color-text-accent);
+    }
+  }
+}
+
+.blockLinks {
+  display: flex;
+  flex: 1 1 50%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 24px;
+
+  .link {
+    width: clamp(9.3125rem, 10.1696rem + -0.9524vw, 9.9375rem);
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 100%;
+  row-gap: 16px;
+  border-top: 1px solid var(--color-dark-secondary-10);
+  text-align: center;
+
+  .textCo {
+    font-size: var(--font-size-primary-xs);
+    padding-block-start: clamp(1rem, 0.7911rem + 0.8571vw, 1.5625rem);
+  }
+
+  .payment {
+    display: flex;
+    gap: 10px;
+    align-self: flex-end;
+
+    .paymentCard {
+      font-size: clamp(1.5625rem, 1.4464rem + 0.4762vw, 1.875rem);
+      color: var(--color-text-primary);
+      line-height: 50%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 664px) {
+  .blockLinks {
+    flex: 1 1 100%;
+  }
+}
