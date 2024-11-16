@@ -6,6 +6,10 @@
   opacity: 0.6;
 }
 
+.button:hover {
+  opacity: 0.8;
+}
+
 .colorPrimary {
   background: var(--color-btn-primary);
 }

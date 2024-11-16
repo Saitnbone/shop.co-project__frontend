@@ -41,30 +41,6 @@
   --font-size-accent-m-m: 24px;
   --font-line-accent-m-m: 28px;
 
-  /*
-  // font accent size desktop
-  --font-size-accent-d-xl: 64px;
-  --font-size-accent-d-l: 48px;
-  --font-size-accent-d-m: 40px;
-
-  // font accent size mobile
-  --font-size-accent-m-xl: 36px;
-  --font-size-accent-m-l: 32px;
-  --font-size-accent-m-m: 24px;
-
-  // font accent line desktop
-  --font-line-accent-d-xl: 64px;
-  --font-line-accent-d-l: 57.6px; // normal
-  --font-line-accent-d-m: 45px;
-
-  // font accent line mobile
-  --font-line-accent-m-xl: 34px;
-  --font-line-accent-m-l: 38.4px; // normal
-  --font-line-accent-m-l-2: 36px;
-  --font-line-accent-m-l-3: 35px;
-  --font-line-accent-m-m: 28px;
-   */
-
   // font primary size
   --font-size-primary-3xl: 40px;
   --font-size-primary-xxl: 36px;
@@ -145,4 +121,8 @@
   // btn colors
   --color-btn-primary: var(--color-dark-primary);
   --color-btn-secondary: var(--color-secondary);
+
+  // border radius
+  --border-radius-primary: 62px;
+  --border-radius-secondary: 20px;
 }

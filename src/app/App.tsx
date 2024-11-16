@@ -6,6 +6,7 @@ import { RouterProvider } from 'react-router-dom';
 import { router } from './router/router';
 import { SpecialOffer } from '@/features/special-offer';
 import { Footer } from '@/widgets/footer';
+import { Subscribe } from '@/features/subscribe';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <SpecialOffer />
       <Header />
       <RouterProvider router={router} />
+      <Subscribe />
       <Footer />
     </>
   );

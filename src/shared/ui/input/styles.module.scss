@@ -1,0 +1,22 @@
+.inputWrapper {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  padding-inline-end: 16px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius-primary);
+
+}
+
+.icon {
+  color: var(--color-text-40);
+  font-size: clamp(1.25rem, 1.1571rem + 0.381vw, 1.5rem);
+}
+
+.input {
+  width: inherit;
+}
+
+.input:focus {
+  outline: none;
+}
