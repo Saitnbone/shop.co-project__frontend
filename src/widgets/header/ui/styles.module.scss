@@ -1,5 +1,5 @@
 .header {
-  padding: 24px;
+padding: 24px;
   align-items: center;
   justify-content: space-around;
   top: 0;
@@ -7,7 +7,10 @@
   &Block {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    max-width: 1240px;
+    margin: 0 auto;
   }
 }
 
@@ -19,38 +22,25 @@
 
 .iconsBlock {
   display: flex;
-  flex-direction: row;
-  gap: 25px;
+  gap: 16px;
 }
 
-.profileIcon {
-  block-size: 30px;
-  inline-size: 30px;
+.profileIcon, .cartIcon, .searchIcon {
+  block-size: 24px;
+  inline-size: 24px;
+  cursor: pointer;
 }
 
-.cartIcon {
-  block-size: 30px;
-  inline-size: 30px;
-}
-
-// Медиазапросы для иконок профиля и корзины
+// Медиазапросы для иконок профиля, корзины и поиска
 
 @media (hover: hover) {
-  .cartIcon:hover {
-    cursor: pointer;
-    opacity: 0.5;
-  }
-  .profileIcon:hover {
+  .profileIcon:hover, .cartIcon:hover, .searchIcon:hover {
     opacity: 0.5;
   }
 }
 
 @media (hover: none) {
-  .cartIcon:active {
-    cursor: pointer;
-    opacity: 0.5;
-  }
-  .profileIcon:active {
+  .profileIcon:active, .cartIcon:active, .searchIcon:active {
     opacity: 0.5;
   }
 }
