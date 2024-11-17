@@ -1,16 +1,21 @@
 .inputWrapper {
   display: flex;
-  gap: 12px;
   width: 100%;
-  padding-inline-end: 16px;
   background: var(--color-bg-secondary);
   border-radius: var(--border-radius-primary);
 
 }
 
 .icon {
+  padding-right: 12px;
+}
+
+.icon > svg {
   color: var(--color-text-40);
-  font-size: clamp(1.25rem, 1.1571rem + 0.381vw, 1.5rem);
+  min-width: 24px;
+  width: 100%;
+  max-width: 24px;
+  height: 100%;
 }
 
 .input {
@@ -19,4 +24,11 @@
 
 .input:focus {
   outline: none;
+}
+
+@media (max-width: 460px) {
+  .icon > svg {
+    min-width: 20px;
+    max-width: 20px;
+  }
 }

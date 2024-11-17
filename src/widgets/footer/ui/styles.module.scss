@@ -1,15 +1,13 @@
 .bg {
   background: var(--color-bg-secondary);
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
-  width: 100%;
-  max-width: 1440px;
-  min-width: 320px;
-  margin: 0 auto;
-  padding-block-start: clamp(8.75rem, 13.0357rem + -4.7619vw, 11.875rem);
-  padding-block-end: clamp(4.8125rem, 4.6964rem + 0.4762vw, 5.125rem);
-  padding-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
+  max-width: 1240px;
+  margin-inline: clamp(16px, 0.5714rem + 3.8095vw, 100px);
+  padding-block: 50px 80px;
 }
 
 .footerBlock {
@@ -36,12 +34,30 @@
 
   .social {
     display: flex;
-    gap: 10px;
-    font-size: 24px;
-    color: var(--color-text-primary);
+    gap: 12px;
 
-    .socialIcon:hover {
-      color: var(--color-text-accent);
+    &Link {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--color-dark-secondary-20);
+      border-radius: 50px;
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    &Link:hover {
+      background-color: var(--color-bg-dark);
+      border-color: var(--color-bg-dark);
+      color: var(--color-text-on-dark);
+    }
+
+    &Icon {
+      width: 14px;
+      height: 14px;
     }
   }
 }
@@ -74,13 +90,18 @@
 
   .payment {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     align-self: flex-end;
 
-    .paymentCard {
-      font-size: clamp(1.5625rem, 1.4464rem + 0.4762vw, 1.875rem);
-      color: var(--color-text-primary);
-      line-height: 50%;
+    &Card {
+      width: 46px;
+      height: 30px;
+      background-color: var(--color-bg-primary);
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease;
     }
   }
 }
@@ -94,5 +115,13 @@
 @media (max-width: 664px) {
   .blockLinks {
     flex: 1 1 100%;
+  }
+}
+
+@media (hover: none) {
+  .socialLink:active {
+    background-color: var(--color-bg-dark);
+    border-color: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
   }
 }

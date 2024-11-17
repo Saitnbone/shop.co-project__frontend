@@ -5,9 +5,6 @@
 }
 
 body {
-  max-width: 1440px;
-  min-width: 320px;
-  min-height: 100vh;
   margin: 0 auto;
   font-family: var(--font-family-primary);
   font-size: clamp(
@@ -77,6 +74,14 @@ ul,
 ol,
 li {
   list-style: none;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 //:root {
