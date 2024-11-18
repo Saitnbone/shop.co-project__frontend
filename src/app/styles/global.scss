@@ -90,3 +90,9 @@ li {
 //  color: var(--color-text-primary);
 //  background-color: var(--color-bg-primary);
 //}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
