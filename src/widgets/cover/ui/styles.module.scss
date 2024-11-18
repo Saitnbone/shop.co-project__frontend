@@ -7,18 +7,20 @@
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
-  padding-inline: 100px;
+  padding-inline-start: 100px;
+  display: flex;
+  align-items: end;
+  gap: 20px;
 }
 
 .textBlock {
-  padding-block-end: 48px;
+  padding-block: 103px 116px;
 }
 
 .title {
-  font-size: 64px;
   line-height: 64px;
   max-width: 577px;
-  margin-block-end: 32px;
+  margin-block-end: 18px;
 }
 
 .text {
@@ -26,10 +28,31 @@
   font-size: 16px;
   line-height: 22px;
   color: var(--color-dark-secondary-60);
-  margin-block-end: 32px;
+  margin-block-end: 27px;
 }
 
 .button {
   color: var(--color-primary);
-  padding: 15px 67.5px;
+  padding: 15px 69px;
+  margin-block-end: 48px;
+}
+
+.imageBlock {
+  display: flex;
+  position: relative;
+}
+
+.imageBlock::before {
+  content: url("../../../shared/assets/star.svg");
+  position: absolute;
+  top: 297px;
+  left: 35px;
+}
+
+.imageBlock::after {
+  content: url("../../../shared/assets/star.svg");
+  position: absolute;
+  top: 111px;
+  right: 53px;
+  transform: scale(1.8);
 }
