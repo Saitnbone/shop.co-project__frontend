@@ -1,0 +1,35 @@
+.advantageList {
+  display: flex;
+  width: fit-content;
+}
+
+.advantage {
+  display: grid;
+  padding-inline: 32px;
+  border-right: 1px solid var(--color-border-primary);
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  color: #000000;
+}
+
+.description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.6);
+}
