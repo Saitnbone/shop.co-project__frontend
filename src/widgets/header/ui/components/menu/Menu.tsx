@@ -3,7 +3,7 @@ import { TUiMenu } from '@/widgets/header/types';
 
 export const UiMenu: React.FC<TUiMenu> = ({ dropDown }) => {
   return (
-    <nav>
+    <nav className={s.headerNav}>
       <ul className={s.menu}>
         <li>{dropDown}</li>
         <li>

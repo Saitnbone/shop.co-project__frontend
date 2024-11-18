@@ -3,7 +3,7 @@ import s from '../../styles.module.scss';
 
 export const UiSearchIcon: React.FC = () => {
   return (
-    <span>
+    <span className={s.searchIconWrapper}>
       <IoIosSearch className={s.searchIcon}/>
     </span>
   );

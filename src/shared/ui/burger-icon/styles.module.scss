@@ -1,0 +1,16 @@
+.burgerIcon {
+  display: none;
+}
+
+@media (width <=650px) {
+  .burgerIcon {
+    display: block;
+    inline-size: 30px;
+    block-size: 30px;
+
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+}
