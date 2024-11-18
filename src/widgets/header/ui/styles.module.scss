@@ -1,5 +1,5 @@
 .header {
-padding: 24px;
+  padding: 24px;
   align-items: center;
   justify-content: space-around;
   top: 0;
@@ -12,6 +12,16 @@ padding: 24px;
     max-width: 1240px;
     margin: 0 auto;
   }
+
+  &Content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.burgerIcon {
+  display: none;
 }
 
 .menu {
@@ -25,22 +35,56 @@ padding: 24px;
   gap: 16px;
 }
 
-.profileIcon, .cartIcon, .searchIcon {
-  block-size: 24px;
-  inline-size: 24px;
+.profileIcon,
+.cartIcon,
+.searchIcon,
+.mobileSearchIcon,
+.burgerIcon {
+  block-size: 30px;
+  inline-size: 30px;
   cursor: pointer;
 }
 
-// Медиазапросы для иконок профиля, корзины и поиска
+.mobileSearchIcon {
+  display: none;
+}
+
+// Медиазапросы для иконок профиля, корзины, поиска и бургер-кнопки
 
 @media (hover: hover) {
-  .profileIcon:hover, .cartIcon:hover, .searchIcon:hover {
+  .profileIcon:hover,
+  .cartIcon:hover,
+  .searchIcon:hover .mobileSearchIcon:hover,
+  .burgerIcon:hover {
     opacity: 0.5;
   }
 }
 
 @media (hover: none) {
-  .profileIcon:active, .cartIcon:active, .searchIcon:active {
+  .profileIcon:active,
+  .cartIcon:active,
+  .searchIcon:active .mobileSearchIcon:active,
+  .burgerIcon:active {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 1195px) {
+  .mobileSearchIcon {
+    display: block;
+  }
+}
+
+@media (width <=650px) {
+  .mobileSearchIcon {
+    display: none;
+  }
+
+  .headerNav {
+    display: none;
+  }
+
+  .burgerIcon {
+    display: block;
   }
 }
