@@ -1,6 +1,8 @@
 .advantageList {
   display: flex;
   width: fit-content;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .advantage {
@@ -23,13 +25,13 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 52px;
-  color: #000000;
+  color: var(--color-dark-primary);
 }
 
 .description {
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 22px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--color-dark-secondary-60);
 }

@@ -1,0 +1,35 @@
+.bg {
+  background-color: var(--color-secondary-2);
+}
+
+.cover {
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding-inline: 100px;
+}
+
+.textBlock {
+  padding-block-end: 48px;
+}
+
+.title {
+  font-size: 64px;
+  line-height: 64px;
+  max-width: 577px;
+  margin-block-end: 32px;
+}
+
+.text {
+  max-width: 545px;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--color-dark-secondary-60);
+  margin-block-end: 32px;
+}
+
+.button {
+  color: var(--color-primary);
+  padding: 15px 67.5px;
+}
