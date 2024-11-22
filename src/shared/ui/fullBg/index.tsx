@@ -1,6 +1,6 @@
-import s from './style.module.scss';
-import { TFullBg } from '@/shared/ui/fullBg/types.ts';
+import s from './styles.module.scss';
 import clsx from 'clsx';
+import { TFullBg } from '@ui/fullBg/types.ts';
 
 export const FullBg: React.FC<TFullBg> = ({
   children,

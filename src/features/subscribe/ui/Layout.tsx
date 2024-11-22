@@ -1,9 +1,9 @@
-import { Button } from '@/shared/ui/button';
-import { ButtonColor } from '@/shared/ui/button/types.ts';
-import { Input } from '@/shared/ui/input';
+import { Button } from '@ui/button';
+import { ButtonColor } from '@ui/button/types.ts';
+import { Input } from '@ui/input';
 import s from './styles.module.scss';
-import { Title } from '@/shared/ui/title';
-import { textColor } from '@/shared/ui/title/types.ts';
+import { Title } from '@ui/title';
+import { textColor } from '@ui/title/types.ts';
 import { AiOutlineMail } from 'react-icons/ai';
 import { useState } from 'react';
 

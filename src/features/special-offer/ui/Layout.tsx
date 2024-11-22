@@ -4,7 +4,7 @@ import { RxCross1 } from 'react-icons/rx';
 import { ButtonColor, ButtonType } from '@/shared/ui/button/types.ts';
 import clsx from 'clsx';
 import { useState } from 'react';
-import { FullBg } from '@/shared/ui/fullBg';
+import { FullBg } from '@ui/fullBg';
 
 export const UISpecialOffer = () => {
   const [isVisible, setIsVisible] = useState(true);
