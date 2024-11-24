@@ -2,7 +2,6 @@ import s from './styles.module.scss';
 import { TUiFooter } from '../types.ts';
 import { footerData } from './mockFooterData.tsx';
 import { FooterLinkGroup } from './components/footer-link/FooterLinkGroup.tsx';
-import { FullBg } from '@/shared/ui/fullBg';
 import {
   FaCcApplePay,
   FaCcMastercard,
@@ -14,6 +13,7 @@ import {
   FaInstagram,
   FaTwitter,
 } from 'react-icons/fa';
+import { FullBg } from '@ui/fullBg';
 
 export const UiFooter: React.FC<TUiFooter> = ({ logo }) => {
   return (
