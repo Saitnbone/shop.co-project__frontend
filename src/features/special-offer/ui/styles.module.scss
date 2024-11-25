@@ -64,7 +64,7 @@
 
 @media (max-width: 390px) {
   .text {
-    font-size: 10px;
+    font-size: clamp(0.625rem, 0.0536rem + 2.8571vw, 0.75rem);
   }
 }
 
