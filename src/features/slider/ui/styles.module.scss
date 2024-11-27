@@ -10,7 +10,7 @@
   overflow: hidden;
   white-space: nowrap;
   padding-inline: clamp(1.25rem, -0.6071rem + 7.619vw, 6.25rem);
-  padding-block:clamp(2.5rem, 2.4304rem + 0.2857vw, 2.6875rem);
+  padding-block: clamp(2.5rem, 2.4304rem + 0.2857vw, 2.6875rem);
 }
 
 .contentIcons {
@@ -33,4 +33,24 @@
       calc(-100% - clamp(2.125rem, 0.4536rem + 6.8571vw, 6.625rem))
     );
   }
+}
+
+.versace {
+  width: clamp(7.25rem, 6.0893rem + 4.7619vw, 10.375rem);
+}
+
+.zara {
+  width: clamp(3.9375rem, 3.2875rem + 2.6667vw, 5.6875rem);
+}
+
+.gucci {
+  width: clamp(6.8125rem, 5.7214rem + 4.4762vw, 9.75rem);
+}
+
+.prada {
+  width: clamp(7.9375rem, 6.3821rem + 6.381vw, 12.125rem);
+}
+
+.klein {
+  width: clamp(8.375rem, 6.7036rem + 6.8571vw, 12.875rem);
 }

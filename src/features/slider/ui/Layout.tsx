@@ -13,30 +13,30 @@ export const UiSlider: FC = () => {
     <FullBg className={s.bg}>
       <div className={s.content}>
         <div className={clsx(s.contentIcons, s.animation)}>
-          <Versace width={166} />
-          <Zara width={91} />
-          <Gucci width={156} />
-          <Prada width={194} />
-          <CalvinKlein width={207} />
+          <Versace className={s.versace} />
+          <Zara className={s.zara} />
+          <Gucci className={s.gucci} />
+          <Prada className={s.prada} />
+          <CalvinKlein className={s.klein} />
 
-          <Versace width={166} />
-          <Zara width={91} />
-          <Gucci width={156} />
-          <Prada width={194} />
-          <CalvinKlein width={207} />
+          <Versace className={s.versace} />
+          <Zara className={s.zara} />
+          <Gucci className={s.gucci} />
+          <Prada className={s.prada} />
+          <CalvinKlein className={s.klein} />
         </div>
         <div className={clsx(s.contentIcons, s.animation)}>
-          <Versace width={166} />
-          <Zara width={91} />
-          <Gucci width={156} />
-          <Prada width={194} />
-          <CalvinKlein width={207} />
+          <Versace className={s.versace} />
+          <Zara className={s.zara} />
+          <Gucci className={s.gucci} />
+          <Prada className={s.prada} />
+          <CalvinKlein className={s.klein} />
 
-          <Versace width={166} />
-          <Zara width={91} />
-          <Gucci width={156} />
-          <Prada width={194} />
-          <CalvinKlein width={207} />
+          <Versace className={s.versace} />
+          <Zara className={s.zara} />
+          <Gucci className={s.gucci} />
+          <Prada className={s.prada} />
+          <CalvinKlein className={s.klein} />
         </div>
       </div>
     </FullBg>
