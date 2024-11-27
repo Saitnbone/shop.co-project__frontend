@@ -10,12 +10,12 @@ import { useState } from 'react';
 export const UISubscribe = () => {
   const [email, setEmail] = useState('');
 
-  const handlerSubmit = (e) => {
+  const handlerSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Email: ', email);
   };
 
-  const onChange = (e) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 

@@ -4,13 +4,13 @@ export type TUiFooter = {
   logo: ReactNode;
 };
 
-export interface FooterLink {
+export interface IFooterLink {
   name: string;
   url: string;
 }
 
-export interface FooterLinkGroup {
+export interface IFooterLinkGroup {
   title: string;
-  links: FooterLink[];
+  links: IFooterLink[];
   className: string;
 }

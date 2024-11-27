@@ -6,4 +6,5 @@ export type TInput = {
   className: string;
   icon: ReactNode;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  value: string;
 };

@@ -1,1 +1,1 @@
-export { Header } from './facade/facade';
+export { Cover } from './facade/facade';

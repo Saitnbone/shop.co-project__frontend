@@ -1,14 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { LogoUI } from './LogoUI';
+// import { Meta, StoryFn } from '@storybook/react';
+// import { LogoUI } from './LogoUI';
 
-export default {
-  name: 'Ui/Logo',
-  component: LogoUI,
-} as Meta;
+// export default {
+//   name: 'Ui/Logo',
+//   component: LogoUI,
+// } as Meta;
 
-type story = StoryObj< typeof LogoUI>
+// type story = StoryFn< typeof LogoUI>
 
-const Template: StoryObj = () => <LogoUI />;
+// const Template: StoryFn = () => <LogoUI />;
 
-export const Default = Template.bind({});
-Default.args = {};
+// export const Default = Template.bind({});
+// Default.args = {};

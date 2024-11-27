@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export type TTitle = {
-  as: string;
+  as: keyof JSX.IntrinsicElements;
   children: ReactNode;
   className: string;
   color: textColor;
