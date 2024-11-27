@@ -1,9 +1,9 @@
-import { FooterLinkGroup } from '@/widgets/footer/types.ts';
+import { IFooterLinkGroup } from '@/widgets/footer/types.ts';
 import { FooterLink } from '@/widgets/footer/ui/components/footer-link/FooterLink.tsx';
 import s from './styles.module.scss';
 import clsx from 'clsx';
 
-export const FooterLinkGroup: React.FC<FooterLinkGroup> = ({
+export const FooterLinkGroup: React.FC<IFooterLinkGroup> = ({
   title,
   links,
   className,

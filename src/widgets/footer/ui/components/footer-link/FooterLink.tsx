@@ -1,5 +1,5 @@
-import { FooterLink } from '@/widgets/footer/types.ts';
+import { IFooterLink } from "@/widgets/footer/types";
 
-export const FooterLink: React.FC<FooterLink> = ({ name, url }) => (
+export const FooterLink: React.FC<IFooterLink> = ({ name, url }) => (
   <a href={url}>{name}</a>
 );

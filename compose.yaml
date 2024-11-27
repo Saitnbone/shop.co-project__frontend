@@ -1,0 +1,15 @@
+services:
+  frontend-shop.co:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3011:80' # Проброс порта 3011 на порт 80 контейнера
+    volumes:
+      - ./dist:/usr/share/nginx/html:rw # Монтирование папки
+    stdin_open: true # Открывает интерактивный ввод
+    logging: # Исправление ключа для настройки логирования
+      driver: json-file
+      options:
+        max-size: '10m'
+        max-file: '3'
