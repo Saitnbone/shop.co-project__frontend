@@ -1,14 +1,15 @@
-// import { Meta, StoryFn } from '@storybook/react';
-// import { LogoUI } from './LogoUI';
+import type { Meta, StoryObj } from '@storybook/react';
 
-// export default {
-//   name: 'Ui/Logo',
-//   component: LogoUI,
-// } as Meta;
+import { LogoUI } from './LogoUI';
 
-// type story = StoryFn< typeof LogoUI>
+const meta: Meta<typeof LogoUI> = {
+  component: LogoUI,
+  tags: ['autodocs'],
+};
 
-// const Template: StoryFn = () => <LogoUI />;
+export default meta;
+type Story = StoryObj<typeof LogoUI>;
 
-// export const Default = Template.bind({});
-// Default.args = {};
+export const Logo: Story = {
+  args: {},
+};
