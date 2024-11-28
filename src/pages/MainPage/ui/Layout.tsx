@@ -1,12 +1,14 @@
+import React from 'react';
+import { TUiMainPage } from '../types';
 import s from './styles.module.scss';
-import { Slider } from '@/features/slider';
 
-export const UiMainPage = () => {
+export const UiMainPage: React.FC<TUiMainPage> = ({ cover, slider }) => {
   return (
     <main className={s.main}>
-      В разработке
-      <section className={s.greetings}></section>
-      <Slider />
+      <section className={s.greetings}>
+        {cover}
+      </section>
+      {slider}
       <section className={s.newArrivals}></section>
       <section className={s.topSelling}></section>
       <section className={s.browseBy}></section>
