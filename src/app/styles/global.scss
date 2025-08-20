@@ -5,10 +5,10 @@
 }
 
 body {
-  max-width: 1440px;
+  width: 100%;
   min-width: 320px;
-  min-height: 100vh;
   margin: 0 auto;
+  min-height: 100vh;
   font-family: var(--font-family-primary);
   font-size: clamp(
     var(--font-size-primary-xs),
@@ -77,22 +77,4 @@ ul,
 ol,
 li {
   list-style: none;
-}
-
-//:root {
-//  max-width: 1440px;
-//  min-width: 320px;
-//  min-height: 100vh;
-//  margin: 0 auto;
-//  font-family: var(--font-family-primary);
-//  font-size: clamp(var(--font-size-primary-xs), 0.8333rem + 0.1852vw, var(--font-size-primary-s));
-//  font-weight: var(--font-weight-regular);
-//  color: var(--color-text-primary);
-//  background-color: var(--color-bg-primary);
-//}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }

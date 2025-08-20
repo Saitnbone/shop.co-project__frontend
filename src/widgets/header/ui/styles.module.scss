@@ -1,5 +1,6 @@
 .header {
-  padding: 24px;
+  padding: 24px 0;
+  margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
   align-items: center;
   justify-content: space-around;
   top: 0;
@@ -9,14 +10,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    max-width: 1240px;
+    max-width: 1440px;
     margin: 0 auto;
   }
 
   &Content {
     display: flex;
     flex-direction: row;
-    gap: 20px;
   }
 }
 
@@ -86,5 +86,9 @@
 
   .burgerIcon {
     display: block;
+  }
+
+  .headerContent {
+    gap: 20px;
   }
 }

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { UiSlider } from '@/features/slider/ui/Layout.tsx';
+import { UiSlider } from '../ui/Layout';
 
 export const Slider: FC = () => {
   return <UiSlider />;

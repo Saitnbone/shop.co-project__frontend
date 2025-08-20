@@ -1,18 +1,9 @@
-# # syntax=docker/dockerfile:1
-
-# 
-FROM node:20-slim AS build
-
+FROM node:22-alpine AS build
 WORKDIR /app 
-
 COPY package*.json ./
 RUN npm install 
-
 COPY . .
-
 RUN npm run build
-
-# Запуск сервера для статической сборки
 
 FROM nginx:alpine
 

@@ -6,11 +6,18 @@
   width: 100%;
   max-width: 1440px;
   min-width: 320px;
-  margin: 0 auto;
-  padding-inline-start: 100px;
+  margin-block: 0;
+  margin-inline: auto;
+  padding-inline: clamp(
+    1.0625rem,
+    -0.8643rem + 7.9048vw,
+    6.25rem
+  );
+  justify-content: space-between;
   display: flex;
   align-items: end;
   gap: 20px;
+  box-sizing: border-box;
 }
 
 .textBlock {
@@ -20,6 +27,7 @@
 .title {
   line-height: 64px;
   max-width: 577px;
+  font-size: clamp(2rem, 1.4286rem + 2.8571vw, 4rem);
   margin-block-end: 18px;
 }
 
@@ -43,16 +51,59 @@
 }
 
 .imageBlock::before {
-  content: url("../../../shared/assets/star.svg");
+  content: url('../../../shared/assets/star.svg');
   position: absolute;
-  top: 297px;
-  left: 35px;
+  top: 65%;
+  left: 5%;
+  transform: translateY(-50%);
 }
 
+/* Правая звезда */
 .imageBlock::after {
-  content: url("../../../shared/assets/star.svg");
+  content: url('../../../shared/assets/star.svg');
   position: absolute;
-  top: 111px;
-  right: 53px;
-  transform: scale(1.8);
+  top: 25%;
+  right: 8%;
+  transform: translateY(-50%);
+}
+
+.image {
+  inline-size: clamp(15.9375rem, 8.5268rem + 37.0536vw, 41.875rem);
+  max-width: 100%;
+  block-size: auto; 
+  object-fit: contain;
+  object-position: bottom;
+}
+
+@media (max-width: 1150px) {
+  .cover {
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 5px;
+  }
+
+  .textBlock {
+    padding-block: 60px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .textBlock {
+    padding-block: 40px 0;
+  }
+
+  .title {
+    text-align: left;
+    line-height: 45px;
+  }
+
+  .text {
+    text-align: left;
+  }
+
+  .image {
+    inline-size: 100%;
+    block-size: auto;
+  }
 }

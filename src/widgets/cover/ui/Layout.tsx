@@ -26,7 +26,7 @@ export const UiCover: React.FC = () => {
           <AdvantageList />
         </div>
         <div className={s.imageBlock}>
-          <img src={image} alt="People" />
+          <img className={s.image} src={image} alt="People" />
         </div>
       </div>
     </FullBg>

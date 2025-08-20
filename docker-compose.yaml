@@ -1,0 +1,12 @@
+services:
+  mbkassa-landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PORT=${PORT:-8080}
+        - VITE_API_URL=${VITE_API_URL}
+    ports:
+      - "${PORT:-8080}:${PORT:-8080}"
+    restart: unless-stopped
+    container_name: landing
