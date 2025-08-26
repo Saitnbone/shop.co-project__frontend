@@ -1,10 +1,10 @@
-import { AdvantageList } from '@/widgets/cover/ui/components/advantages/Advantage-list.tsx';
+import { AdvantageList } from './components/advantages/Advantage-list';
 import s from './styles.module.scss';
 import { Button } from '@/shared/ui/button';
 import { ButtonColor } from '@/shared/ui/button/types.ts';
 import { Title } from '@/shared/ui/title';
 import { textColor } from '@/shared/ui/title/types.ts';
-import image from '../../../shared/assets/people.png';
+import image from '@/shared/assets/people.png';
 import { FullBg } from '@ui/fullBg';
 
 export const UiCover: React.FC = () => {

@@ -108,6 +108,15 @@
     font-weight: bold;
   }
 
+  .imageParty {
+    margin-inline-start: 28%;
+    scale: 2;
+  }
+
+  .imageGym {
+    margin-inline: 50%;
+  }
+
   .grid {
     grid-template-columns: repeat(1, 1fr);
   }

@@ -8,11 +8,7 @@
   min-width: 320px;
   margin-block: 0;
   margin-inline: auto;
-  padding-inline: clamp(
-    1.0625rem,
-    -0.8643rem + 7.9048vw,
-    6.25rem
-  );
+  padding-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
   justify-content: space-between;
   display: flex;
   align-items: end;
@@ -70,7 +66,7 @@
 .image {
   inline-size: clamp(15.9375rem, 8.5268rem + 37.0536vw, 41.875rem);
   max-width: 100%;
-  block-size: auto; 
+  block-size: auto;
   object-fit: contain;
   object-position: bottom;
 }
@@ -105,5 +101,11 @@
   .image {
     inline-size: 100%;
     block-size: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    inline-size: 100%;
   }
 }
