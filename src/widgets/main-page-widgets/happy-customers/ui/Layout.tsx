@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { reviewsData } from '../model/reviewsData';
 import s from './styles.module.scss';
@@ -21,6 +21,19 @@ export const UiHappyCustomers: FC = () => {
     [emblaApi]
   );
 
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const onSelected = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on('select', onSelected);
+    onSelected();
+  }, [emblaApi, onSelected]);
+
   return (
     <div className={s.container}>
       <div className={s.header}>
@@ -40,11 +53,15 @@ export const UiHappyCustomers: FC = () => {
           />
         </div>
       </div>
-
       <div className={s.embla} ref={emblaRef}>
         <div className={s.embla__container}>
-          {reviewsData.map((sld) => (
-            <div className={s.embla__slide} key={sld.id}>
+          {reviewsData.map((sld, index) => (
+            <div
+              className={`${s.embla__slide} ${
+                Math.abs(index - selectedIndex) <= 1 ? '' : s.blurred
+              }`}
+              key={sld.id}
+            >
               <div>
                 <img src="/star.png" alt="Star" />
                 <img src="/star.png" alt="Star" />
@@ -53,8 +70,8 @@ export const UiHappyCustomers: FC = () => {
                 <img src="/star.png" alt="Star" />
               </div>
               <div className={s.slideReviewerContainer}>
-                 <h3 className={s.slideReviewer}>{sld.reviewer}</h3>
-                 <img src="/confirm.svg" alt="Confirm icon" />
+                <h3 className={s.slideReviewer}>{sld.reviewer}</h3>
+                <img src="/confirm.svg" alt="Confirm icon" />
               </div>
               <p className={s.slideText}>{sld.text}</p>
             </div>

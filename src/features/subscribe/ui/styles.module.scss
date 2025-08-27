@@ -1,6 +1,8 @@
 .subscribe {
   left: 100px;
-  margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
+  // margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
+  margin-inline: auto;
+  max-inline-size: 1280px;
   border-radius: var(--border-radius-secondary);
   background: var(--color-bg-dark);
 }
@@ -39,7 +41,6 @@
   font-weight: var(--font-weight-medium);
 }
 
-
 @media (max-width: 1164px) {
   .container {
     justify-content: center;
@@ -47,6 +48,12 @@
 
   .subscribeTitle {
     text-align: center;
+  }
+}
+
+@media (width <=1400px) {
+  .subscribe {
+    margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
   }
 }
 

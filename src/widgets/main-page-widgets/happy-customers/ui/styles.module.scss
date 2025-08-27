@@ -9,12 +9,12 @@
   justify-content: space-between;
   margin-inline: auto;
   align-items: center;
+  padding-inline: 5%;
 }
 
 .title {
   font-family: Integral CF;
   font-weight: 700;
-  font-style: Bold;
   font-size: clamp(1.875rem, 1.5536rem + 1.6071vw, 3rem);
   line-height: 100%;
   vertical-align: middle;
@@ -44,17 +44,6 @@
   margin-top: 40px;
 }
 
-.embla::before,
-.embla::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 13%;
-  pointer-events: none;
-  z-index: 2;
-}
-
 .embla::before {
   left: 0;
   background: linear-gradient(to right, rgba(255, 255, 255, 0.9), transparent);
@@ -74,13 +63,19 @@
 
 .embla__slide {
   flex: 0 0 auto;
-  max-width: 400px;
   box-sizing: border-box;
   background: white;
   border-radius: 20px;
-  padding: 32px;
+  padding: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
   border: 1px solid #f0f0f0;
   margin-inline-end: 20px;
+  max-width: 400px;
+  transition: filter 0.4s ease;
+}
+
+.embla__slide.blurred {
+  filter: blur(4px);
+  opacity: 0.5;
 }
 
 .slideReviewerContainer {
@@ -91,16 +86,15 @@
 }
 
 .slideText {
-  font-size: 16px;
+  font-size: clamp(0.9375rem, 0.8482rem + 0.4464vw, 1.25rem);
   line-height: 1.5;
   margin: 16px 0 12px 0;
   color: #333;
 }
 
 .slideReviewer {
-  font-weight: 500;
-  font-style: Bold;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: clamp(0.9375rem, 0.8482rem + 0.4464vw, 1.25rem);
   line-height: 22px;
 }
 
