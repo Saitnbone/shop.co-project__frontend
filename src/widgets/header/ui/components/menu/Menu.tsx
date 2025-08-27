@@ -1,5 +1,6 @@
-import s from '../../styles.module.scss';
+import { Link } from 'react-router-dom';
 import { TUiMenu } from '@/widgets/header/types';
+import s from '../../styles.module.scss';
 
 export const UiMenu: React.FC<TUiMenu> = ({ dropDown }) => {
   return (
@@ -17,9 +18,7 @@ export const UiMenu: React.FC<TUiMenu> = ({ dropDown }) => {
           </a>
         </li>
         <li>
-          <a href="#" target="_blank">
-            Brands
-          </a>
+          <Link to="/brands">Brands</Link>
         </li>
       </ul>
     </nav>
