@@ -1,6 +1,6 @@
 import s from './styles.module.scss';
-import { TUiFooter } from '../types.ts';
-import { footerData } from './mockFooterData.tsx';
+import { TUiFooter } from '../types/types.ts';
+import { footerData } from '../lib/mockFooterData.tsx';
 import { FooterLinkGroup } from './components/footer-link/FooterLinkGroup.tsx';
 import {
   FaCcApplePay,
@@ -15,10 +15,11 @@ import {
 } from 'react-icons/fa';
 import { FullBg } from '@ui/fullBg';
 
-export const UiFooter: React.FC<TUiFooter> = ({ logo }) => {
+export const UiFooter: React.FC<TUiFooter> = ({ logo, subscribe }) => {
   return (
     <FullBg className={s.bg}>
       <footer className={s.footer}>
+        {subscribe}
         <div className={s.footerBlock}>
           <div className={s.blockLogo}>
             {logo}
@@ -78,3 +79,4 @@ export const UiFooter: React.FC<TUiFooter> = ({ logo }) => {
     </FullBg>
   );
 };
+    

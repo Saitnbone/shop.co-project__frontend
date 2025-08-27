@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 export type TUiFooter = {
   logo: ReactNode;
+  subscribe: ReactNode;
 };
 
 export interface IFooterLink {

@@ -1,10 +1,9 @@
 .subscribe {
-  left: 100px;
-  // margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
   margin-inline: auto;
   max-inline-size: 1280px;
   border-radius: var(--border-radius-secondary);
   background: var(--color-bg-dark);
+  margin-block-end: 50px;
 }
 
 .container {
@@ -19,8 +18,7 @@
 }
 
 .subscribeTitle {
-  max-width: 551px;
-  min-width: 297px;
+  font-size: clamp(1.5625rem, 1.2946rem + 1.3393vw, 2.5rem);
 }
 
 .subscribeForm {
@@ -48,12 +46,6 @@
 
   .subscribeTitle {
     text-align: center;
-  }
-}
-
-@media (width <=1400px) {
-  .subscribe {
-    margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
   }
 }
 

@@ -1,4 +1,4 @@
-import { IFooterLinkGroup } from '@/widgets/footer/types.ts';
+import { IFooterLinkGroup } from '@/widgets/footer/types/types';
 import { FooterLink } from '@/widgets/footer/ui/components/footer-link/FooterLink.tsx';
 import s from './styles.module.scss';
 import clsx from 'clsx';
