@@ -11,9 +11,7 @@ function App() {
     <>
       <SpecialOffer />
       <Header />
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
       <Footer />
     </>
   );

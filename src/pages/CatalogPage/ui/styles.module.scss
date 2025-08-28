@@ -1,0 +1,7 @@
+.catalog {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  max-inline-size: 1440px;
+  margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
+}

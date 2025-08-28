@@ -1,0 +1,73 @@
+.filters {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  max-inline-size: 295px;
+  border: 1px solid var(--color-dark-secondary-10);
+  border-radius: var(--border-radius-secondary);
+  padding: 1%;
+  overflow: hidden; // важно для анимации max-height
+}
+
+.filtersHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.filtersTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.filtersContent {
+  overflow: hidden;
+  background: transparent;
+}
+
+.filtersContentEnter {
+  max-height: 0;
+  transform: translateY(-20px);
+  // opacity: 0.8;
+}
+
+.filtersContentEnterActive {
+  max-height: 100%;
+  transform: translateY(0);
+  opacity: 1;
+  transition:
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filtersContentExit {
+  max-height: 500px;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.filtersContentExitActive {
+  max-height: 0;
+  transform: translateY(-20px);
+  // opacity: 0.8;
+  transition:
+    max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.applyFiltersButton {
+  color: var(--color-primary);
+  text-align: center;
+  inline-size: 100%;
+  block-size: 48px;
+  background-color: var(--color-dark-primary);
+  border-radius: var(--border-radius-primary);
+  margin-top: 16px; // отступ от контента
+}
