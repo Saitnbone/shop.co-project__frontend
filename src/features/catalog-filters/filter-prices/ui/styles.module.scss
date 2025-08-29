@@ -1,0 +1,20 @@
+.filterPrices {
+  display: flex;
+  flex-direction: column;
+  padding-block-start: 20px;
+  margin-block-start: 20px;
+  border-block-start: 1px solid var(--color-border-primary);
+}
+
+.filterPricesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filterPricesTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  vertical-align: middle;
+}

@@ -4,7 +4,13 @@ import { TFilterProps } from '../types/types';
 import filtersIcon from '@assets/catalog-page/filters-icon.svg';
 import s from './styles.module.scss';
 
-export const UiCatalogFilters = ({ filteredProductTypes }: TFilterProps) => {
+export const UiCatalogFilters = ({
+  filteredProductTypes,
+  filterPrices,
+  filterColors,
+  filterSizes,
+  filterDressStyles,
+}: TFilterProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section className={s.filters}>
@@ -26,7 +32,11 @@ export const UiCatalogFilters = ({ filteredProductTypes }: TFilterProps) => {
         unmountOnExit
       >
         <div className={s.filtersContent}>
-          <div>{filteredProductTypes}</div>
+          {filteredProductTypes}
+          {filterPrices}
+          {filterColors}
+          {filterSizes}
+          {filterDressStyles}
           <button className={s.applyFiltersButton}>Apply Filters</button>
         </div>
       </CSSTransition>
