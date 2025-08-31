@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { TFilterProps } from '../types/types';
 import filtersIcon from '@assets/catalog-page/filters-icon.svg';
@@ -12,6 +12,8 @@ export const UiCatalogFilters = ({
   filterDressStyles,
 }: TFilterProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const nodeRef = useRef<HTMLDivElement>(null); 
+
   return (
     <section className={s.filters}>
       <div className={s.filtersHeader}>
@@ -30,8 +32,9 @@ export const UiCatalogFilters = ({
           exitActive: s.filtersContentExitActive,
         }}
         unmountOnExit
+        nodeRef={nodeRef}
       >
-        <div className={s.filtersContent}>
+        <div className={s.filtersContent} ref={nodeRef}>
           {filteredProductTypes}
           {filterPrices}
           {filterColors}

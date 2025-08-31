@@ -1,9 +1,9 @@
 :root {
   // font
-  --font-family-accent: 'Integral CF', system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
-  --font-family-primary: 'Satoshi-Variable', system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
+  --font-family-accent:
+    'Integral CF', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-primary:
+    'Satoshi-Variable', system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   // font-weight
   --font-weight-regular: 400;
@@ -125,4 +125,5 @@
   // border radius
   --border-radius-primary: 62px;
   --border-radius-secondary: 20px;
+  --border-radius-full: 50%;
 }

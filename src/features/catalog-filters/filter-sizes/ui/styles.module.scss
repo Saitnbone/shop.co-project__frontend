@@ -18,3 +18,31 @@
   line-height: 100%;
   vertical-align: middle;
 }
+
+.sizeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-block-start: 20px;
+}
+
+.sizeListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-primary);
+  block-size: 39px;
+  flex: 0 0 auto;
+  background-color: var(--color-secondary);
+  white-space: nowrap;
+  padding: 5px 15px;
+}
+
+.sizeListItemText {
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-dark-secondary-60);
+}
