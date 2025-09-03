@@ -15,8 +15,8 @@ export const UiFilterColors: FC = () => {
   };
 
   return (
-    <div onClick={toggleOpen} className={s.filterColors}>
-      <div className={s.filterColorsHeader}>
+    <div className={s.filterColors}>
+      <div onClick={toggleOpen} className={s.filterColorsHeader}>
         <h2 className={s.filterColorsTitle}>Colors</h2>
         <img src={arrowRight} alt="Arrow right" />
       </div>

@@ -10,8 +10,8 @@ export const UiFilterDressStyle: FC = () => {
   };
 
   return (
-    <div onClick={toggleOpen} className={s.filterDressStyle}>
-      <div className={s.filterDressStyleHeader}>
+    <div className={s.filterDressStyle}>
+      <div onClick={toggleOpen} className={s.filterDressStyleHeader}>
         <h2 className={s.filterDressStyleTitle}>Dress Style</h2>
         <img src={arrowRight} alt="Arrow right" />
       </div>

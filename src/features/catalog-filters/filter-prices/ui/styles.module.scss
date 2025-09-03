@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+.filterPricesHeader:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
 .filterPricesTitle {
   font-weight: 700;
   font-size: 20px;

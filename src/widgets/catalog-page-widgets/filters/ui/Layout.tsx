@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { TFilterProps } from '../types/types';
-import filtersIcon from '@assets/catalog-page/filters-icon.svg';
+import { FilterIcon } from '../../FilterIcon';
 import s from './styles.module.scss';
 
 export const UiCatalogFilters = ({
@@ -12,14 +12,14 @@ export const UiCatalogFilters = ({
   filterDressStyles,
 }: TFilterProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const nodeRef = useRef<HTMLDivElement>(null); 
+  const nodeRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className={s.filters}>
       <div className={s.filtersHeader}>
         <h2 className={s.filtersTitle}>Filters</h2>
         <div onClick={() => setIsOpen(!isOpen)} className={s.filterIconWrapper}>
-          <img className={s.filterIcon} src={filtersIcon} alt="" />
+          <FilterIcon />
         </div>
       </div>
       <CSSTransition

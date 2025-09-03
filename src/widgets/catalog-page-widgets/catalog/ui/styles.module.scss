@@ -1,0 +1,22 @@
+.catalogHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+  inline-size: 100%;
+  margin-block-start: 10px;
+  margin-block-end: 30px;
+}
+
+.catalogTitle {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.catalogContent {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 20px;
+}

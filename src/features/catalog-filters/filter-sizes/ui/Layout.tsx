@@ -15,8 +15,8 @@ export const UiFilterSizes: FC = () => {
   };
 
   return (
-    <div onClick={toggleOpen} className={s.filterSizes}>
-      <div className={s.filterSizesHeader}>
+    <div className={s.filterSizes}>
+      <div onClick={toggleOpen} className={s.filterSizesHeader}>
         <h2 className={s.filterSizesTitle}>Size</h2>
         <img src={arrowRight} alt="Arrow right" />
       </div>

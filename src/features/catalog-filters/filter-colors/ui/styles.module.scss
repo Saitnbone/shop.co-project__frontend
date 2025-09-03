@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+.filterColorsHeader:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
 .filterColorsTitle {
   font-weight: 700;
   font-size: 20px;
@@ -24,6 +29,7 @@
   grid-template-columns: repeat(auto-fit, minmax(37px, 1fr));
   gap: 5px;
   margin-block-start: 20px;
+  padding-inline-start: 5px;
 }
 
 .colorListItem {
@@ -31,6 +37,14 @@
   border-radius: var(--border-radius-full);
   aspect-ratio: 1/1;
   border: 2px solid #00000033;
+}
+
+.colorListItem:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .colorGreen {

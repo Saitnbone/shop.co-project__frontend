@@ -7,7 +7,7 @@
   border: 1px solid var(--color-dark-secondary-10);
   border-radius: var(--border-radius-secondary);
   padding: 1%;
-  overflow: hidden; // важно для анимации max-height
+  overflow: hidden;
 }
 
 .filtersHeader {
@@ -25,6 +25,7 @@
   vertical-align: middle;
 }
 
+
 .filtersContent {
   overflow: hidden;
   background: transparent;
@@ -33,7 +34,6 @@
 .filtersContentEnter {
   max-height: 0;
   transform: translateY(-20px);
-  // opacity: 0.8;
 }
 
 .filtersContentEnterActive {
@@ -55,7 +55,6 @@
 .filtersContentExitActive {
   max-height: 0;
   transform: translateY(-20px);
-  // opacity: 0.8;
   transition:
     max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
@@ -69,5 +68,5 @@
   block-size: 48px;
   background-color: var(--color-dark-primary);
   border-radius: var(--border-radius-primary);
-  margin-top: 16px; // отступ от контента
+  margin-top: 16px;
 }

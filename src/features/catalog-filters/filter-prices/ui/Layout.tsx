@@ -6,7 +6,7 @@ import arrowRight from '@assets/catalog-page/arrow-right.svg';
 
 export const UiFilterPrices: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([50, 200]);
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
@@ -23,7 +23,7 @@ export const UiFilterPrices: FC = () => {
           <Slider
             range
             min={0}
-            max={1000}
+            max={350}
             value={priceRange}
             onChange={(value) => setPriceRange(value as [number, number])}
             defaultValue={[20, 50]}
