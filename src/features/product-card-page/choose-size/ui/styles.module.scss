@@ -1,0 +1,42 @@
+.chooseSizeContainer {
+  margin-block: 20px;
+  border-top: 1px solid rgb(229, 229, 229);
+}
+
+.sizeLabel {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.6);
+  padding-block-start: 10px;
+}
+
+.sizesContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-block-start: 10px;
+}
+
+.sizeItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-primary);
+  block-size: 39px;
+  flex: 0 0 auto;
+  background-color: var(--color-secondary);
+  white-space: nowrap;
+  padding: 5px 15px;
+}
+
+.sizeItem:hover {
+  cursor: pointer;
+}
+
+.sizeName {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}

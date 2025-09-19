@@ -1,0 +1,10 @@
+.chooseQuantity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: var(--border-radius-primary);
+  inline-size: 170px;
+  block-size: 52px;
+}
+

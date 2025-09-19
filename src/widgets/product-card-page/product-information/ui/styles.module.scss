@@ -1,0 +1,24 @@
+.productInformation {
+  margin-block: 50px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tabWrapper:hover {
+  cursor: pointer;
+    color: rgba(0, 0, 0, 1);
+  border-bottom: 2px solid #000;
+}
+
+.tab {
+  font-weight: 300;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}

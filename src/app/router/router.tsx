@@ -3,7 +3,7 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom';
-import { MainPage, BrandsPage, CatalogPage } from '@/pages/index';
+import { MainPage, BrandsPage, CatalogPage, CardPage} from '@/pages/index';
 import App from '@/app/App';
 
 export const router = createBrowserRouter(
@@ -13,6 +13,7 @@ export const router = createBrowserRouter(
       <Route index element={<MainPage />} />
       <Route path="brands" element={<BrandsPage />} />
       <Route path='catalog' element={<CatalogPage />} />
+      <Route path='catalog/cardId' element={<CardPage />} />
 
       {/* Защищенные страницы */}
       {/* <Route path="profile" element={<ProfilePage />} />

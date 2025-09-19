@@ -1,0 +1,10 @@
+.addToCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 400px;
+  block-size: 52px;
+  border-radius: var(--border-radius-primary);
+  background-color: black;
+  color: white;
+}
