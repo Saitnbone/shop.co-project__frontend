@@ -1,12 +1,29 @@
 .cartPage {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
-  align-items: center;
+}
+
+.cartPageTitle {
+  font-family: Integral CF;
+  font-weight: 700;
+  font-size: clamp(1.875rem, 1.6964rem + 0.8929vw, 2.5rem);
+  line-height: 100%;
+  vertical-align: middle;
 }
 
 .cartPageContainer {
   max-inline-size: 1240px;
   display: flex;
   gap: 32px;
+  margin-block-start: 30px;
+  margin-block-end: 90px;
+}
+
+@media (width <= 880px) {
+  .cartPageContainer {
+    flex-direction: column;
+    align-items: center;
+  }
 }

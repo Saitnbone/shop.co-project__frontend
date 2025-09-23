@@ -1,0 +1,93 @@
+.cart {
+  border-radius: var(--border-radius-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  inline-size: clamp(358px, 40vw, 505px);
+  max-block-size: 458px;
+}
+
+.cartTitle {
+  font-weight: 500;
+  font-style: Bold;
+  font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.costDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  margin-block-start: 25px;
+}
+
+.costDetailRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.costDetailLabel {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.costDetailValue {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.discountValue {
+  color: var(--color-accent-red);
+}
+
+.totalAmount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: 15px;
+}
+
+.totalLabel {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.promoCode {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 25px;
+}
+
+.promoInput {
+  inline-size: 328px;
+  block-size: 48px;
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius-primary);
+}
+
+.promoButton {
+  border-radius: var(--border-radius-primary);
+  background-color: black;
+  color: white;
+  inline-size: 119px;
+  block-size: 48px;
+}
+
+.checkoutButton {
+  inline-size: 100%;
+  background-color: black;
+  border-radius: var(--border-radius-primary);
+  color: white;
+  block-size: 60px;
+}
+
+@media (width <= 880px) {
+  .cart {
+    inline-size: 100%;
+    max-block-size: none;
+  }
+}

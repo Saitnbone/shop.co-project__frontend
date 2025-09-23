@@ -118,3 +118,9 @@
   vertical-align: middle;
   color: rgba(0, 0, 0, 1);
 }
+
+@media (width <= 880px) {
+  .orderSummary {
+    inline-size: 100%;
+  }
+}
