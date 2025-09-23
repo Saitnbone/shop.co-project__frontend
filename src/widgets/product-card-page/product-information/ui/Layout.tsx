@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ProductInformationProps } from '../types/types';
 import s from './styles.module.scss';
 
@@ -6,24 +7,35 @@ export const UiProductInformation = ({
   ProductDetails,
   ProductFAQ,
 }: ProductInformationProps) => {
+  const [activeTab, setActiveTab] = useState(1);
+
+  const tabs = [
+    { label: 'Product Details', component: <ProductDetails /> },
+    { label: 'Rating & Reviews', component: <ReviewsAndRatings /> },
+    { label: 'FAQs', component: <ProductFAQ /> },
+  ];
+
   return (
     <div className={s.productInformation}>
       <div className={s.tabs}>
-        <div className={s.tabWrapper}>
-          <span className={s.tab}>Product Details</span>
-        </div>
-        <div className={s.tabWrapper}>
-          <span className={s.tab}>Rating & Reviews</span>
-        </div>
-        <div className={s.tabWrapper}>
-          <span className={s.tab}>FAQs</span>
-        </div>
+        {tabs.map((tab, index) => (
+          <div
+            key={index}
+            className={`${s.tabWrapper} ${activeTab === index ? s.active : ''}`}
+            onClick={() => setActiveTab(index)}
+          >
+            <span className={s.tab}>{tab.label}</span>
+          </div>
+        ))}
+        <div
+          className={s.activeIndicator}
+          style={{
+            transform: `translateX(${activeTab * 100}%)`,
+            width: `${100 / tabs.length}%`,
+          }}
+        />
       </div>
-      <div className={s.content}>
-        <ReviewsAndRatings />
-        <ProductDetails />
-        <ProductFAQ />
-      </div>
+      <div className={s.content}>{tabs[activeTab].component}</div>
     </div>
   );
 };
