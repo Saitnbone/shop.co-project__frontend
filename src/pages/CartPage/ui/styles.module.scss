@@ -1,0 +1,12 @@
+.cartPage {
+  display: flex;
+  justify-content: center;
+  margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
+  align-items: center;
+}
+
+.cartPageContainer {
+  max-inline-size: 1240px;
+  display: flex;
+  gap: 32px;
+}
