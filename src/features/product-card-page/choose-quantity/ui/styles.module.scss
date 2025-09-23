@@ -4,7 +4,10 @@
   align-items: center;
   background-color: #f0f0f0;
   border-radius: var(--border-radius-primary);
-  inline-size: 170px;
+  inline-size: clamp(110px, 17vw, 170px);
   block-size: 52px;
 }
 
+.quantity {
+  font-size: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+}

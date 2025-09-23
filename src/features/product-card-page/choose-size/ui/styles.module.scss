@@ -5,7 +5,7 @@
 
 .sizeLabel {
   font-weight: 300;
-  font-size: 16px;
+  font-size: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
   line-height: 100%;
   color: rgba(0, 0, 0, 0.6);
   padding-block-start: 10px;
@@ -36,7 +36,7 @@
 
 .sizeName {
   font-weight: 300;
-  font-size: 16px;
+  font-size: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
   line-height: 100%;
   color: rgba(0, 0, 0, 0.6);
 }

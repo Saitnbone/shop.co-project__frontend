@@ -8,9 +8,11 @@ export const UiCardPage = ({
 }: CardPageProps) => {
   return (
     <main className={s.main}>
-      <ProductSettings />
-      <ProductInformation />
-      <Recommendations />
+      <div className={s.cardPageContentContainer}>
+        <ProductSettings />
+        <ProductInformation />
+        <Recommendations />
+      </div>
     </main>
   );
 };

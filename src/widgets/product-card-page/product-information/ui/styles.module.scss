@@ -6,19 +6,24 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .tabWrapper:hover {
   cursor: pointer;
-    color: rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 1);
   border-bottom: 2px solid #000;
 }
 
 .tab {
   font-weight: 300;
   font-style: Medium;
-  font-size: 20px;
+  font-size: clamp(0.875rem, 0.7679rem + 0.5357vw, 1.25rem);
   line-height: 22px;
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
+}
+
+.content {
+  margin-top: 30px;
 }

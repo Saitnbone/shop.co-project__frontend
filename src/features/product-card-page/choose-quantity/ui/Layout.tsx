@@ -1,11 +1,11 @@
-import s from './styles.module.scss'
+import s from './styles.module.scss';
 
 export const UiChooseQuantity = () => {
   return (
     <div className={s.chooseQuantity}>
-      <button>-</button>
-      <span>1</span>
-      <button>+</button>
+      <button className={s.button}>-</button>
+      <span className={s.quantity}>1</span>
+      <button className={s.button}>+</button>
     </div>
   );
 };

@@ -25,7 +25,8 @@ export const UiProductSettings = ({
         </div>
         <span className={s.productPrice}>$19.99</span>
         <p className={s.productDescription}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          This graphic t-shirt which is perfect for any occasion. Crafted from a
+          soft and breathable fabric, it offers superior comfort and style.
         </p>
         <SelectColor />
         <ChooseSize />

@@ -1,0 +1,143 @@
+.reviewCount {
+  font-weight: 400;
+  color: #00000099;
+  font-size: 16px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  block-size: 48px;
+}
+
+.latest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 20px;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1rem);
+  line-height: 22px;
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius-primary);
+  block-size: 100%;
+}
+
+.writeReview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1rem);
+  inline-size: clamp(113px, 10vw, 166px);
+  line-height: 22px;
+  color: var(--color-primary);
+  background-color: var(--color-dark-primary);
+  border-radius: var(--border-radius-primary);
+  block-size: 100%;
+  cursor: pointer;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reviewsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #0000001a;
+  border-radius: var(--border-radius-secondary);
+  padding: 20px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editIconImage {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.userName {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.comment {
+  font-weight: 300;
+  color: #00000099;
+}
+
+.datePosted {
+  font-weight: 400;
+  color: #00000099;
+  font-size: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.loadMoreButton {
+  inline-size: clamp(195px, 10vw, 230px);
+  block-size: clamp(47px, 5vw, 52px);
+  margin-top: 30px;
+  font-size: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+  color: var(--color-dark-primary);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius-primary);
+  border: 1px solid var(--color-border-primary);
+  cursor: pointer;
+}
+
+@media (width <=768px) {
+  .reviewsContainer {
+    grid-template-columns: 1fr;
+  }
+}

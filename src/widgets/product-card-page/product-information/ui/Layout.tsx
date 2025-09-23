@@ -19,9 +19,11 @@ export const UiProductInformation = ({
           <span className={s.tab}>FAQs</span>
         </div>
       </div>
-      <ReviewsAndRatings />
-      <ProductDetails />
-      <ProductFAQ />
+      <div className={s.content}>
+        <ReviewsAndRatings />
+        <ProductDetails />
+        <ProductFAQ />
+      </div>
     </div>
   );
 };
