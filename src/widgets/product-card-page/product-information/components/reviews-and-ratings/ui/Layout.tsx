@@ -12,9 +12,8 @@ export const UiReviewsAndRatings = () => {
           </div>
 
           <div className={s.controls}>
-            {/* @TODO: Нужно сделать кнопку на небольших экаранах устройств */}
-            <div className={s.editIcon}>
-              <img src="" alt="" />
+            <div className={s.editIconWrapper}>
+              <img src="/settings-icon.svg" alt="Settings icon" />
             </div>
             <div className={s.latest}>Latest</div>
             <div className={s.writeReview}>Write a review</div>

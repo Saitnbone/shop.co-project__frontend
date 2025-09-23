@@ -1,9 +1,10 @@
-// src/features/product-card-page/select-image/ui/styles.module.scss
 .selectImageBlock {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .imagesList {
@@ -13,11 +14,10 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-shrink: 0; // Предотвращает сжатие миниатюр
+  flex-shrink: 0;
 }
 
 .imageItem {
-  // Миниатюры: от 60px до 152px (ширина) и от 66px до 167px (высота)
   inline-size: clamp(60px, 12vw, 152px);
   block-size: clamp(66px, 13vw, 167px);
   border-radius: var(--border-radius-secondary);
@@ -39,7 +39,6 @@
 
 .selectedImagePreview {
   flex: 1;
-  // Основное изображение: максимум 444x530px, адаптивно уменьшается
   max-width: clamp(300px, 35vw, 444px);
   max-height: clamp(300px, 42vw, 530px);
   border-radius: var(--border-radius-secondary);
@@ -48,6 +47,9 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-secondary, #f5f5f5);
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .selectedImage {
@@ -81,50 +83,58 @@
   }
 }
 
-// Мобильные (до 768px)
 @media (max-width: 768px) {
   .selectImageBlock {
     flex-direction: column-reverse;
     gap: 20px;
+    max-width: calc(100vw - 40px);
   }
 
   .imagesList {
     flex-direction: row;
     gap: 10px;
-    // overflow-x: auto;
     padding-bottom: 5px;
   }
 
   .selectedImagePreview {
     max-width: 100%;
     max-height: clamp(250px, 50vw, 350px);
+    width: 100%;
   }
 
   .imageItem {
-    // inline-size: clamp(80px, 12vw, 111px);
-    // block-size: clamp(85px, 13vw, 116px);
-    inline-size: clamp(80px, 35vw, 216px);
-    block-size: clamp(85px, 35vw, 216px);
+    inline-size: clamp(80px, 29vw, 216px);
+    block-size: clamp(85px, 27vw, 177px);
     flex-shrink: 0;
   }
 
   .selectedImage {
-    max-width: 50%;
+    max-width: 60%;
+    width: auto;
+    height: auto;
   }
 }
 
-// Очень маленькие экраны (до 480px)
 @media (max-width: 480px) {
   .selectImageBlock {
     gap: 15px;
+    max-width: calc(100vw - 20px);
+    box-sizing: border-box;
   }
 
   .selectedImagePreview {
     max-height: clamp(200px, 60vw, 280px);
+    width: 100%;
+    max-width: 100%;
   }
 
   .imageItem {
-    inline-size: 111px;
-    block-size: 106px;
+    inline-size: clamp(70px, 29vw, 160px);
+    block-size: clamp(75px, 26vw, 125px);
+  }
+
+  .selectedImage {
+    max-width: 65%;
+    max-height: 100%;
   }
 }

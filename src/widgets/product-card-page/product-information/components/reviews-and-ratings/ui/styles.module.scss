@@ -32,10 +32,10 @@
   font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1rem);
   inline-size: clamp(113px, 10vw, 166px);
   line-height: 22px;
+  block-size: 40px;
   color: var(--color-primary);
   background-color: var(--color-dark-primary);
   border-radius: var(--border-radius-primary);
-  block-size: 100%;
   cursor: pointer;
 }
 
@@ -62,6 +62,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.editIconWrapper {
+  display: none;
+  inline-size: 40px;
+  block-size: 40px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
 }
 
 .reviewsContainer {
@@ -139,5 +147,34 @@
 @media (width <=768px) {
   .reviewsContainer {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 480px) {
+  .latest {
+    display: none;
+  }
+
+  .editIconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (width <= 374px) {
+  .headerContainer {
+    flex-direction: column;
+    align-items: normal;
+    // align-items: flex-end;
+    gap: 12px;
+  }
+
+  .header {
+    justify-content: left;
+  }
+
+  .controls {
+    justify-content: flex-end;
   }
 }

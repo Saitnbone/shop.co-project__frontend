@@ -5,7 +5,12 @@
   background-color: #f0f0f0;
   border-radius: var(--border-radius-primary);
   inline-size: clamp(110px, 17vw, 170px);
-  block-size: 52px;
+  block-size: 48px;
+}
+
+.button {
+  font-size: clamp(1.125rem, 1.1093rem + 1.139vw, 1.75rem);
+  font-weight: 400;
 }
 
 .quantity {
