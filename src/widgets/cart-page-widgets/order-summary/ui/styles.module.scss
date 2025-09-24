@@ -59,6 +59,11 @@
   vertical-align: middle;
 }
 
+.deleteIcon:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 .productSize {
   display: flex;
   align-items: center;
