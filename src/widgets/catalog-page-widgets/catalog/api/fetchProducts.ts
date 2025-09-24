@@ -6,8 +6,8 @@
 //   dressType: string[];
 // }
 
-// export const fetchFilteredProducts = async (filters: IFiltersState) => {
-//   // Fetch products from API with filters
-// };
+export const fetchFilteredProducts = async () => {
+  // Fetch products from API with filters
+};
 
 
