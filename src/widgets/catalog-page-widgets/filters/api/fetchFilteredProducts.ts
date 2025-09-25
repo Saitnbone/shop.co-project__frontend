@@ -1,84 +1,87 @@
-// src/widgets/catalog-page-widgets/catalog/api/fetchProducts.ts
-// Функция для запроса отфильтрованных товаров
-// import { IFiltersState } from '../../store/filtersSlice'; // Путь к твоему слайсу
+import { apiClient } from '@/shared/api';
 
-// export const fetchProducts = async (filters: IFiltersState) => {
-//   const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001'; // Переменная окружения
-//   const params = new URLSearchParams();
+export interface IProduct {
+  id: string;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  discount?: number;
+  images: string[];
+  colors: string[];
+  sizes: string[];
+  category: string;
+  dressType?: string;
+  rating: number;
+  reviewsCount: number;
+  description: string;
+}
 
-//   // Добавляем фильтры как query-параметры
-//   if (filters.category.length) params.append('category', filters.category.join(','));
-//   if (filters.colors.length) params.append('colors', filters.colors.join(','));
-//   if (filters.sizes.length) params.append('sizes', filters.sizes.join(','));
-//   if (filters.dressType.length) params.append('dressType', filters.dressType.join(','));
+export interface IFiltersState {
+  priceRange: [number, number];
+  category: string[];
+  colors: string[];
+  sizes: string[];
+  dressType: string[];
+}
 
-//   params.append('price_min', filters.priceRange[0].toString());
-//   params.append('price_max', filters.priceRange[1].toString());
+export interface IProductsResponse {
+  products: IProduct[];
+  totalCount: number;
+  currentPage: number;
+  totalPages: number;
+}
 
-//   // Отправляем GET-запрос
-//   const response = await fetch(`${baseUrl}/api/products?${params}`);
+export interface IFetchProductsParams {
+  page?: number;
+  limit?: number;
+  filters?: Partial<IFiltersState>;
+  sortBy?: string;
+  sortOrder?: 'asc' | 'desc';
+}
 
-//   if (!response.ok) {
-//     throw new Error('Failed to fetch products'); // TanStack Query обработает ошибку
-//   }
+export const fetchFilteredProducts = async (
+  params: IFetchProductsParams = {}
+): Promise<IProductsResponse> => {
+  const searchParams = new URLSearchParams();
 
-//   return response.json(); // Возвращаем данные (массив товаров)
-// };
+  if (params.page) searchParams.append('page', params.page.toString());
+  if (params.limit) searchParams.append('limit', params.limit.toString());
+  if (params.sortBy) searchParams.append('sortBy', params.sortBy);
+  if (params.sortOrder) searchParams.append('sortOrder', params.sortOrder);
 
-// хук танстака
-// src/widgets/catalog-page-widgets/catalog/hooks/useProducts.ts
-// import { useQuery } from '@tanstack/react-query';
-// import { useSelector } from 'react-redux';
-// import { RootState } from '../../../../app/store'; // Путь к твоему store
-// import { fetchProducts } from '../api/fetchProducts';
+  if (params.filters) {
+    const { category, colors, sizes, dressType, priceRange } = params.filters;
 
-// export const useProducts = () => {
-//   const filters = useSelector((state: RootState) => state.filters);
+    if (priceRange) {
+      searchParams.append('minPrice', priceRange[0].toString());
+      searchParams.append('maxPrice', priceRange[1].toString());
+    }
 
-//   return useQuery({
-//     queryKey: ['products'], // Ключ запроса (без фильтров, так как запрос по кнопке)
-//     queryFn: () => fetchProducts(filters),
-//     enabled: false, // Не запрашивать автоматически
-//     staleTime: 5 * 60 * 1000, // Кэш на 5 минут
-//     retry: 1, // Повторить 1 раз при ошибке
-//   });
-// };
+    if (category?.length) {
+      category.forEach((cat) => searchParams.append('category', cat));
+    }
 
+    if (category?.length) {
+      category.forEach((cat) => searchParams.append('category', cat));
+    }
 
-// Пример реализации
-// src/widgets/catalog-page-widgets/catalog/ui/Layout.tsx
-// import { useProducts } from '../hooks/useProducts';
-// import { useDispatch } from 'react-redux';
-// import { setColors } from '../../store/filtersSlice'; // Путь к действиям
+    if (colors?.length) {
+      colors.forEach((color) => searchParams.append('colors', color));
+    }
 
-// export const UiCatalog = ({ CardTemplate }: TCatalogProps) => {
-//   const dispatch = useDispatch();
-//   const { data: products, isLoading, error, refetch } = useProducts();
+    if (sizes?.length) {
+      sizes.forEach((size) => searchParams.append('sizes', size));
+    }
 
-//   const handleApplyFilters = () => {
-//     refetch(); // Ручной запрос с текущими фильтрами
-//   };
+    if (dressType?.length) {
+      dressType.forEach((type) => searchParams.append('dressType', type));
+    }
+  }
+  return apiClient.get<IProductsResponse>(
+    `/products?${searchParams.toString()}`
+  );
+};
 
-//   const handleColorChange = (colors: string[]) => {
-//     dispatch(setColors(colors)); // Обновляем фильтры в Redux (без запроса)
-//   };
-
-//   if (isLoading) return <div>Loading...</div>;
-//   if (error) return <div>Error: {error.message}</div>;
-
-//   return (
-//     <div className={s.catalog}>
-//       <h2>Catalog</h2>
-//       {/* Фильтры */}
-//       <button onClick={() => handleColorChange(['red'])}>Red</button>
-//       <button onClick={handleApplyFilters}>Apply Filters</button>
-
-//       {/* Товары */}
-//       <div className={s.catalogContent}>
-//         {products?.map((item) => (
-//           <CardTemplate key={item.id} item={item} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
+export const fetchProductById = async (id: string) => {
+  return apiClient.get(`/products/${id}`);
+};

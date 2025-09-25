@@ -1,9 +1,15 @@
 import { FC } from 'react';
+import { RootState } from '@/app/providers/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSizes } from '../../store/filtersSlice';
+import { filterSizesData } from '../model/data';
 import { useState } from 'react';
 import arrowRight from '@assets/catalog-page/arrow-right.svg';
 import s from './styles.module.scss';
 
 export const UiFilterSizes: FC = () => {
+  const dispatch = useDispatch();
+  const selectedSizes = useSelector((state: RootState) => state.filters.sizes);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -11,7 +17,13 @@ export const UiFilterSizes: FC = () => {
   };
 
   const takeSize = (size: string) => {
-    console.log(`Selected size: ${size}`);
+    const isSelected = selectedSizes.includes(size);
+
+    if (isSelected) {
+      dispatch(setSizes(selectedSizes.filter((s) => s !== size)));
+    } else {
+      dispatch(setSizes([...selectedSizes, size]));
+    }
   };
 
   return (
@@ -22,51 +34,15 @@ export const UiFilterSizes: FC = () => {
       </div>
       {isOpen && (
         <ul className={s.sizeList}>
-          <li className={s.sizeListItem} onClick={() => takeSize('XX-Small')}>
-            <span className={s.sizeListItemText}>
-              XX-Small
-            </span>
-          </li>
-          <li className={s.sizeListItem} onClick={() => takeSize('X-Small')}>
-            <span className={s.sizeListItemText}>
-              X-Small
-            </span>
-          </li>
-          <li className={s.sizeListItem} onClick={() => takeSize('Small')}>
-            <span className={s.sizeListItemText}>
-              Small
-            </span>
-          </li>
-          <li className={s.sizeListItem} onClick={() => takeSize('Medium')}>
-            <span className={s.sizeListItemText}>
-              Medium
-            </span>
-          </li>
-          <li className={s.sizeListItem} onClick={() => takeSize('Large')}>
-            <span className={s.sizeListItemText}>
-              Large
-            </span>
-          </li>
-          <li className={s.sizeListItem} onClick={() => takeSize('X-Large')}>
-            <span className={s.sizeListItemText}>
-              X-Large
-            </span>
-          </li>
-          <li className={s.sizeListItem} onClick={() => takeSize('XX-Large')}>
-            <span className={s.sizeListItemText}>
-              XX-Large
-            </span>
-          </li>
-          <li className={s.sizeListItem} onClick={() => takeSize('3X-Large')}>
-            <span className={s.sizeListItemText}>
-              3X-Large
-            </span>
-          </li>
-          <li className={s.sizeListItem} onClick={() => takeSize('4X-Large')}>
-            <span className={s.sizeListItemText}>
-              4X-Large
-            </span>
-          </li>
+          {filterSizesData.map((size) => (
+            <li
+              key={size.id}
+              className={`${s.sizeListItem} ${selectedSizes.includes(size.name) ? s.selected : ''}`}
+              onClick={() => takeSize(size.name)}
+            >
+              <span className={s.sizeListItemText}>{size.name}</span>
+            </li>
+          ))}
         </ul>
       )}
     </div>

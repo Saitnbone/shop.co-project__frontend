@@ -42,12 +42,22 @@
   background-color: var(--color-secondary);
   white-space: nowrap;
   padding: 5px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sizeListItem:hover {
+  background-color: #f5f5f5;
+}
+
+.sizeListItem.selected {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
 }
 
 .sizeListItemText {
-  font-weight: 400;
-  font-style: Regular;
   font-size: 14px;
-  line-height: 100%;
-  color: var(--color-dark-secondary-60);
+  font-weight: 400;
 }
+

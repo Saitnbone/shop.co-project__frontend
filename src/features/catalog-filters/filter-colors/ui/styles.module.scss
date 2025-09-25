@@ -86,3 +86,20 @@
 .colorBlack {
   background-color: var(--color-dark-primary);
 }
+
+.selected {
+  position: relative;
+  block-size: 100%;
+}
+
+.selected::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  inline-size: 16px;
+  block-size: 16px;
+  background-image: url('/selected-icon.svg');
+  background-size: cover;
+}
