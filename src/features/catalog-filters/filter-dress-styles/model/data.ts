@@ -1,0 +1,18 @@
+export const filterDressStylesData = [
+  {
+    id: 1,
+    name: 'Casual',
+  },
+  {
+    id: 2,
+    name: 'Formal',
+  },
+  {
+    id: 3,
+    name: 'Party',
+  },
+  {
+    id: 4,
+    name: 'Gym',
+  },
+];

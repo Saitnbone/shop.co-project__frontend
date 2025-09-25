@@ -3,6 +3,7 @@ import { RootState } from '@/app/providers/store';
 import { setDressType } from '../../store/filtersSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import arrowRight from '@assets/catalog-page/arrow-right.svg';
+import { filterDressStylesData } from '../model/data';
 import s from './styles.module.scss';
 
 export const UiFilterDressStyle: FC = () => {
@@ -33,42 +34,17 @@ export const UiFilterDressStyle: FC = () => {
 
       {isOpen && (
         <ul className={s.dressStyleList}>
-          <li className={s.dressStyleListItem}>
-            <span
-              onClick={() => takeDressType('casual')}
-              className={s.dressStyleListItemText}
-            >
-              Casual
-            </span>
-            <img src={arrowRight} alt="Arrow right" />
-          </li>
-          <li className={s.dressStyleListItem}>
-            <span
-              onClick={() => takeDressType('formal')}
-              className={s.dressStyleListItemText}
-            >
-              Formal
-            </span>
-            <img src={arrowRight} alt="Arrow right" />
-          </li>
-          <li className={s.dressStyleListItem}>
-            <span
-              onClick={() => takeDressType('party')}
-              className={s.dressStyleListItemText}
-            >
-              Party
-            </span>
-            <img src={arrowRight} alt="Arrow right" />
-          </li>
-          <li className={s.dressStyleListItem}>
-            <span
-              onClick={() => takeDressType('gym')}
-              className={s.dressStyleListItemText}
-            >
-              Gym
-            </span>
-            <img src={arrowRight} alt="Arrow right" />
-          </li>
+          {filterDressStylesData.map((style) => (
+            <li key={style.id} className={s.dressStyleListItem}>
+              <span
+                className={s.dressStyleListItemText}
+                onClick={() => takeDressType(style.name)}
+              >
+                {style.name}
+              </span>
+              <img src={arrowRight} alt="Arrow right" />
+            </li>
+          ))}
         </ul>
       )}
     </div>
