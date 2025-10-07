@@ -1,21 +1,24 @@
-import { TCatalogProps, TCardTemplateProps } from '../types/types';
-import { data } from '../model/data';
+import { TCatalogProps } from '../types/types';
 import s from './styles.module.scss';
 
-export const UiCatalog = ({ CardTemplate, SortComponent }: TCatalogProps) => {
-  const items = data as TCardTemplateProps[];
+export const UiCatalog = ({
+  products,
+  CardTemplate, 
+  SortComponent,
+}: TCatalogProps) => {
 
-  return (
-    <div className={s.catalog}>
-      <div className={s.catalogHeader}>
-        <h2 className={s.catalogTitle}>Casual</h2>
-        <SortComponent />
+  if (products)
+    return (
+      <div className={s.catalog}>
+        <div className={s.catalogHeader}>
+          <h2 className={s.catalogTitle}>Casual</h2>
+          <SortComponent />
+        </div>
+        <div className={s.catalogContent}>
+          {products.map((product) => (
+            <CardTemplate key={product.id} item={product} />
+          ))}
+        </div>
       </div>
-      <div className={s.catalogContent}>
-        {items.map((item) => (
-          <CardTemplate key={item.id} item={item} />
-        ))}
-      </div>
-    </div>
-  );
+    );
 };

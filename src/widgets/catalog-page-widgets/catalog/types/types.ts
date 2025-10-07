@@ -1,7 +1,8 @@
 import { ComponentType } from 'react';
+import { IProduct } from '../api/fetchProducts';
 
 export type TCardTemplateProps = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   imageUrl: string;
@@ -9,7 +10,8 @@ export type TCardTemplateProps = {
   price: number;
 };
 
-export type TCatalogProps = {
-  CardTemplate: ComponentType<{ item: TCardTemplateProps }>;
-  SortComponent: ComponentType;
-};
+export interface TCatalogProps {
+  products: IProduct[];
+  CardTemplate: React.FC<{ item: IProduct }>;
+  SortComponent: ComponentType; // Компонент, а не JSX элемент
+}

@@ -1,6 +1,6 @@
 import { UiCardTemplate } from '../ui/Layout';
-import { IItemType } from '../types/types';
+import { IProduct } from '../types/types';
 
-export const CardTemplate = ({ item }: { item: IItemType }) => {
+export const CardTemplate = ({ item }: { item: IProduct }) => {
   return <UiCardTemplate item={item} />;
 };

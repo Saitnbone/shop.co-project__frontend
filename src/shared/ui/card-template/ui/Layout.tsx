@@ -1,7 +1,7 @@
-import { IItemType } from '../types/types';
+import { IProduct } from '../types/types';
 import s from './styles.module.scss';
 
-export const UiCardTemplate = ({ item }: { item: IItemType }) => {
+export const UiCardTemplate = ({ item }: { item: IProduct }) => {
   return (
     <div className={s.item} key={item.id}>
       <img className={s.itemImage} src={item.imageUrl} alt="image" />

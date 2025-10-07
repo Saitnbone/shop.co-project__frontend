@@ -9,6 +9,9 @@ import {
   CatalogPage,
   CardPage,
   CartPage,
+  ProfilePage,
+  NotFoundPage,
+  AuthPage,
 } from '@/pages/index';
 import App from '@/app/App';
 
@@ -22,12 +25,13 @@ export const router = createBrowserRouter(
       <Route path="catalog/cardId" element={<CardPage />} />
       <Route path="cart" element={<CartPage />} />
 
-      {/* Защищенные страницы */}
-      {/* <Route path="profile" element={<ProfilePage />} />
-      <Route path="settings" element={<SettingsPage />} /> */}
+      {/* Защищенные страницы профиля */}
+      <Route path="login" element={<AuthPage />} />
+      <Route path="profile" element={<ProfilePage />} />
+      {/* <Route path="settings" element={<SettingsPage />} /> */}
 
-      {/* 404 */}
-      {/* <Route path="*" element={<NotFoundPage />} /> */}
+      {/* 404 - для прочих роутов которые не подключены к роутингу */}
+      <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
 );

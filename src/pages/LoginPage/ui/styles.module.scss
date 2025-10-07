@@ -1,0 +1,17 @@
+.authMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.authFormWrapper {
+  padding: 20px;
+  border-radius: var(--border-radius-secondary);
+  border: 1px solid var(--color-dark-primary);
+}
