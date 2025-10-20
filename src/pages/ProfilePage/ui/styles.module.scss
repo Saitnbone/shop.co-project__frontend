@@ -1,0 +1,14 @@
+.profilePage {
+  display: flex;
+  justify-content: center;
+  margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
+  align-items: center;
+}
+
+.infoSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  inline-size: 100%;
+  max-inline-size: 1240px;
+  gap: 20px;
+}

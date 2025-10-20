@@ -1,0 +1,55 @@
+.userStoreInfo {
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius-secondary);
+  padding: 20px;
+  block-size: 590px;
+}
+
+.ordersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-block-size: 520px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none; 
+}
+
+.orderItem {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.orderTotal {
+  font-weight: bold;
+}
+
+.orderTotalValue {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.orderStatus {
+  font-weight: 500;
+}
+
+.active {
+  color: var(--color-accent-yellow);
+}
+
+.notDelivered {
+  color: var(--color-accent-red);
+}
+
+.delivered {
+  color: var(--color-accent-green);
+}
