@@ -22,7 +22,7 @@ export const router = createBrowserRouter(
       <Route index element={<MainPage />} />
       <Route path="brands" element={<BrandsPage />} />
       <Route path="catalog" element={<CatalogPage />} />
-      <Route path="catalog/cardId" element={<CardPage />} />
+      <Route path="catalog/:cardId" element={<CardPage />} />
       <Route path="cart" element={<CartPage />} />
 
       {/* Защищенные страницы профиля */}

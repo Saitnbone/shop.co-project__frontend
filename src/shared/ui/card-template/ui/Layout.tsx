@@ -1,9 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import { IProduct } from '../types/types';
 import s from './styles.module.scss';
 
 export const UiCardTemplate = ({ item }: { item: IProduct }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/catalog/${item.id}`);
+  };
+
   return (
-    <div className={s.item} key={item.id}>
+    <div className={s.item} key={item.id} onClick={handleClick}>
       <img className={s.itemImage} src={item.imageUrl} alt="image" />
       <div className={s.itemInfo}>
         <h4 className={s.itemTitle}>{item.title}</h4>

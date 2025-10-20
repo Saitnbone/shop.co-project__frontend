@@ -1,6 +1,6 @@
 export const data = [
   {
-    id: 1,
+    id: '1',
     title: 'Shirt',
     description: 'Description for New Arrival 1',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
@@ -8,7 +8,7 @@ export const data = [
     price: 29.99,
   },
   {
-    id: 2,
+    id: '2',
     title: 'Shirt',
     description: 'Description for New Arrival 2',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
@@ -16,7 +16,7 @@ export const data = [
     price: 39.99,
   },
   {
-    id: 3,
+    id: '3',
     title: 'Shirt',
     description: 'Description for New Arrival 3',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
@@ -24,7 +24,7 @@ export const data = [
     price: 49.99,
   },
   {
-    id: 4,
+    id: '4',
     title: 'Shirt',
     description: 'Description for New Arrival 4',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
@@ -32,7 +32,7 @@ export const data = [
     price: 59.99,
   },
   {
-    id: 5,
+    id: '5',
     title: 'Shirt',
     description: 'Description for New Arrival 4',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
@@ -40,7 +40,7 @@ export const data = [
     price: 59.99,
   },
   {
-    id: 6,
+    id: '6',
     title: 'Shirt',
     description: 'Description for New Arrival 4',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
@@ -48,7 +48,7 @@ export const data = [
     price: 59.99,
   },
   {
-    id: 7,
+    id: '7',
     title: 'Shirt',
     description: 'Description for New Arrival 4',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
@@ -56,7 +56,7 @@ export const data = [
     price: 59.99,
   },
   {
-    id: 8,
+    id: '8',
     title: 'Shirt',
     description: 'Description for New Arrival 4',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
@@ -64,7 +64,31 @@ export const data = [
     price: 59.99,
   },
   {
-    id: 9,
+    id: '9',
+    title: 'Shirt',
+    description: 'Description for New Arrival 4',
+    imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
+    rating: 4.5,
+    price: 59.99,
+  },
+  {
+    id: '10',
+    title: 'Shirt',
+    description: 'Description for New Arrival 4',
+    imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
+    rating: 4.5,
+    price: 59.99,
+  },
+  {
+    id: '11',
+    title: 'Shirt',
+    description: 'Description for New Arrival 4',
+    imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
+    rating: 4.5,
+    price: 59.99,
+  },
+  {
+    id: '12',
     title: 'Shirt',
     description: 'Description for New Arrival 4',
     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',

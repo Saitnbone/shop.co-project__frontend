@@ -21,6 +21,7 @@ export interface IProduct {
   price: number;
 }
 
+
 export const fetchProducts = async (
   params: IFetchProductsParams
 ): Promise<IProductsResponse> => {
