@@ -1,17 +1,15 @@
 import { Link } from 'react-router-dom';
 import { topSellingData } from '../model/topSellingData';
+import { TTopSellingProps } from '../types/types';
 import s from './styles.module.scss';
-import { FC } from 'react';
 
-export const UiTopSelling: FC<{
-  cardTemplate: FC<{ item: (typeof topSellingData)[number] }>;
-}> = ({ cardTemplate }) => {
+export const UiTopSelling = ({ CardTemplate }: TTopSellingProps) => {
   return (
     <>
       <h2 className={s.title}>Top Selling</h2>
       <div className={s.newTopSellingList}>
         {topSellingData.map((item) => (
-          <div key={item.id}>{cardTemplate({ item })}</div>
+          <div key={item.id}>{CardTemplate({ item })}</div>
         ))}
       </div>
       <div className={s.buttonWrapper}>

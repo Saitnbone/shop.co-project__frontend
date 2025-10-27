@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { AdvantageList } from './components/advantages/Advantage-list';
 import s from './styles.module.scss';
 import { Button } from '@/shared/ui/button';
@@ -8,6 +9,11 @@ import image from '@/shared/assets/people.png';
 import { FullBg } from '@ui/fullBg';
 
 export const UiCover: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleShopNowClick = () => {
+    navigate('/catalog');
+  };
   return (
     <FullBg className={s.bg}>
       <div className={s.cover}>
@@ -20,7 +26,11 @@ export const UiCover: React.FC = () => {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <Button color={ButtonColor.primary} className={s.button}>
+          <Button
+            onClick={handleShopNowClick}
+            color={ButtonColor.primary}
+            className={s.button}
+          >
             Shop Now
           </Button>
           <AdvantageList />

@@ -1,17 +1,15 @@
 import { Link } from 'react-router-dom';
 import { newArrivalsData } from '../model/newArrivalsData';
+import { TNewArrivalsProps } from '../types/types';
 import s from './styles.module.scss';
-import { FC } from 'react';
 
-export const UiNewArrivals: FC<{
-  cardTemplate: FC<{ item: (typeof newArrivalsData)[number] }>;
-}> = ({ cardTemplate }) => {
+export const UiNewArrivals = ({ CardTemplate }: TNewArrivalsProps) => {
   return (
     <>
       <h2 className={s.title}>New Arrivals</h2>
       <div className={s.newArrivalsList}>
         {newArrivalsData.map((item) => (
-          <div key={item.id}>{cardTemplate({ item })}</div>
+          <div key={item.id}>{CardTemplate({ item })}</div>
         ))}
       </div>
       <div className={s.buttonWrapper}>

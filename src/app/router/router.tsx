@@ -11,7 +11,7 @@ import {
   CartPage,
   ProfilePage,
   NotFoundPage,
-  AuthPage,
+  // AuthPage,
 } from '@/pages/index';
 import App from '@/app/App';
 
@@ -21,12 +21,14 @@ export const router = createBrowserRouter(
       {/* Общие страницы */}
       <Route index element={<MainPage />} />
       <Route path="brands" element={<BrandsPage />} />
-      <Route path="catalog" element={<CatalogPage />} />
-      <Route path="catalog/:cardId" element={<CardPage />} />
       <Route path="cart" element={<CartPage />} />
 
+      {/* Роуты страницы каталога */}
+      <Route path="catalog" element={<CatalogPage />} />
+      <Route path="catalog/:cardId" element={<CardPage />} />
+
       {/* Защищенные страницы профиля */}
-      <Route path="login" element={<AuthPage />} />
+      {/* <Route path="login" element={<AuthPage />} /> */}
       <Route path="profile" element={<ProfilePage />} />
       {/* <Route path="settings" element={<SettingsPage />} /> */}
 

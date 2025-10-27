@@ -1,6 +1,6 @@
-import { authUser } from '../api/api';
+// import { authUser } from '../api/api';
 // import { validationRules } from '../api/lib/validationRules';
-import s from './styles.module.scss';
+// import s from './styles.module.scss';
 
 {
   /* <script setup lang="ts">
@@ -138,13 +138,13 @@ checkSubmissionStatus();
 
 // -----------------------------------------------
 
-interface LeadForm {
-  name: string;
-  telegram: string;
-  email: string;
-}
+// interface LeadForm {
+//   name: string;
+//   telegram: string;
+//   email: string;
+// }
 
-export const UiAuthPage = () => {
+// export const UiAuthPage = () => {
   // Начальное состояние для формы
   // const initialForm: LeadForm = {
   //   name: '',
@@ -207,29 +207,29 @@ export const UiAuthPage = () => {
 //   }
 // }
 
-  return (
-    <main className={s.authMain}>
-      <div className={s.authFormWrapper}>
-        <form onSubmit={submitForm} className={s.authForm}>
-          <h3 className={s.formTitle}>Authorization</h3>
-          <label className={s.label} htmlFor="email">
-            Email
-          </label>
-          <input className={s.input} id="email" type="text" />
-          <label className={s.label} htmlFor="password">
-            Password
-          </label>
-          <input
-            className={s.input}
-            id="password"
-            type="text"
-            placeholder="password"
-          />
-          <button className={s.formButton}>
-            Authorize
-          </button>
-        </form>
-      </div>
-    </main>
-  );
-};
+//   return (
+//     <main className={s.authMain}>
+//       <div className={s.authFormWrapper}>
+//         <form onSubmit={submitForm} className={s.authForm}>
+//           <h3 className={s.formTitle}>Authorization</h3>
+//           <label className={s.label} htmlFor="email">
+//             Email
+//           </label>
+//           <input className={s.input} id="email" type="text" />
+//           <label className={s.label} htmlFor="password">
+//             Password
+//           </label>
+//           <input
+//             className={s.input}
+//             id="password"
+//             type="text"
+//             placeholder="password"
+//           />
+//           <button className={s.formButton}>
+//             Authorize
+//           </button>
+//         </form>
+//       </div>
+//     </main>
+//   );
+// };

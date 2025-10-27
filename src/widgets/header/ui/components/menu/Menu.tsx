@@ -3,19 +3,16 @@ import { TUiMenu } from '@/widgets/header/types';
 import s from '../../styles.module.scss';
 
 export const UiMenu: React.FC<TUiMenu> = ({ dropDown }) => {
+
   return (
     <nav className={s.headerNav}>
       <ul className={s.menu}>
         <li>{dropDown}</li>
         <li>
-          <a href="#" target="_blank">
-            On Sale
-          </a>
+          <Link to="/catalog">On Sale</Link>
         </li>
         <li>
-          <a href="#" target="_blank">
-            New Arrivals
-          </a>
+          <Link to="/catalog">New Arrivals</Link>
         </li>
         <li>
           <Link to="/brands">Brands</Link>

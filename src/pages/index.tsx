@@ -5,4 +5,4 @@ export { CardPage } from './CardPage';
 export { CartPage } from './CartPage';
 export { ProfilePage } from './ProfilePage';
 export { NotFoundPage } from './NotFoundPage';
-export { AuthPage } from './LoginPage';
+// export { AuthPage } from './LoginPage';

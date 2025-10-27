@@ -1,5 +1,5 @@
-import { UiAuthPage } from '../ui/Layout';
+// import { UiAuthPage } from '../ui/Layout';
 
-export const AuthPage = () => {
-  return <UiAuthPage />;
-};
+// export const AuthPage = () => {
+//   return <UiAuthPage />;
+// };
