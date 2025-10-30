@@ -5,7 +5,7 @@ import { UiBurgerIcon } from './components/icons-block/BurgerIcon';
 import { UiIconsBlock } from './components/icons-block/IconsBlock';
 import { UiSearchInput } from '@/widgets/header/ui/components/search-input/SearchInput.tsx';
 
-export const UiHeader: React.FC<TUiHeader> = ({ logo, dropDown }) => {
+export const UiHeader: React.FC<TUiHeader> = ({ logo, dropDown, cart }) => {
   return (
     <header className={s.header}>
       <div className={s.headerBlock}>
@@ -17,6 +17,7 @@ export const UiHeader: React.FC<TUiHeader> = ({ logo, dropDown }) => {
         <UiSearchInput />
         <UiIconsBlock />
       </div>
+      {cart}
     </header>
   );
 };

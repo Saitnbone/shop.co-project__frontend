@@ -1,0 +1,151 @@
+.sidebarMenu__content {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 475px;
+  max-width: 65vw;
+  height: 100vh;
+  background-color: white;
+  padding: 2rem 1.5rem;
+  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.2);
+  animation: slideIn-87785ea7 0.3s;
+  z-index: 2;
+}
+
+.sidebarMenu__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebarMenu__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  color: black;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebarMenu__close:hover {
+  color: var(--second-main-color);
+}
+
+.header__list {
+  margin-block-start: 30px;
+}
+
+.header__list_item {
+  margin-bottom: 20px;
+}
+
+.header__list_item span {
+  position: relative;
+  display: inline-block;
+  color: var(--second-main-color);
+  transition: color 0.2s;
+  font-size: clamp(0.75rem, 0.6429rem + 0.5357vw, 1.125rem);
+}
+
+.header__list_item span:hover {
+  cursor: pointer;
+}
+
+.header__list_item span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background: var(--second-main-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__list_item span:hover::after {
+  transform: scaleX(1);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.sidebar-fade-enter-active,
+.sidebar-fade-leave-active {
+  transition: opacity 0.2s;
+}
+.sidebar-fade-enter-from,
+.sidebar-fade-leave-to {
+  opacity: 0;
+}
+
+.sidebar-menu__logo {
+  margin: auto 0;
+}
+
+.sidebarMenu__contactsInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.sidebarMenu__logo {
+  inline-size: auto;
+  block-size: 4vh;
+  max-block-size: 30px;
+}
+
+.sidebarMenu__contactsBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.sidebarMenu__contacts {
+  margin-block-end: 20px;
+  color: var(--second-main-color);
+  font-size: clamp(0.75rem, 0.6429rem + 0.5357vw, 1rem);
+}
+
+.sidebarMenu__contactsList {
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(0.75rem, 0.7031rem + 0.2344vw, 0.9375rem);
+  gap: 15px;
+}
+
+.sidebarMenu__contactsListItem {
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(0.625rem, 0.5625rem + 0.3125vw, 0.875rem);
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.sidebarMenu__contactsListItemImg {
+  block-size: 20px;
+  inline-size: 20px;
+}
+
+.contactLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  color: var(--second-main-color);
+}
