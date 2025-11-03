@@ -21,13 +21,14 @@
   display: flex;
   flex-direction: row;
   gap: 12px;
+  margin-block-end: 20px;
 }
 
 .imageWrapper {
   background-color: var(--color-secondary);
   border-radius: var(--border-radius-secondary);
-  inline-size: clamp(88px, 22vw, 124px);
-  block-size: clamp(88px, 22vw, 124px);
+  inline-size: clamp(88px, 22vw, 90px);
+  block-size: clamp(88px, 22vw, 89px);
 }
 
 .productImage {
@@ -54,7 +55,8 @@
 .productTitle {
   font-weight: 500;
   font-style: Bold;
-  font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+  // font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+  font-size: 20px;
   line-height: 100%;
   vertical-align: middle;
 }
@@ -92,13 +94,13 @@
   justify-content: space-between;
   align-items: center;
   inline-size: 100%;
-  margin-block-start: 3%;
 }
 
 .productPrice {
   font-weight: 500;
   font-style: Bold;
-  font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+  // font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+  font-size: 18px;
   line-height: 100%;
   vertical-align: middle;
 }
@@ -109,7 +111,7 @@
   align-items: center;
   justify-content: space-around;
   inline-size: clamp(103px, 25vw, 126px);
-  block-size: clamp(31px, 8vw, 40px);
+  block-size: clamp(31px, 8vw, 30px);
   background-color: var(--color-secondary);
   border-radius: var(--border-radius-primary);
 }

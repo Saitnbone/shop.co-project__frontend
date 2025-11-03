@@ -1,5 +1,6 @@
 export interface UiCartProps {
   CartItem: React.ComponentType<{ cartItem: ICartItem }>;
+  LogoUI: React.ComponentType;
 }
 
 export interface ICartItem {

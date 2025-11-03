@@ -2,7 +2,6 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   top: 0;
   right: 0;
   left: auto;
@@ -12,14 +11,15 @@
   background-color: white;
   padding: 2rem 1.5rem;
   box-shadow: 2px 0 16px rgba(0, 0, 0, 0.2);
-  animation: slideIn-87785ea7 0.3s;
+  animation: slideIn 0.3s;
   z-index: 2;
 }
 
 .sidebarMenu__header {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex: 1;
+  min-height: 0;
 }
 
 .sidebarMenu__close {
@@ -37,12 +37,46 @@
   color: var(--second-main-color);
 }
 
-.header__list {
+.cartTitle {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 100%;
   margin-block-start: 30px;
+  margin-block-end: 20px;
+  flex-shrink: 0; // Не сжимается
+}
+
+.header__list {
+  flex: 1; // Растягивается на всё доступное место
+  overflow-y: auto; // Скролл только при переполнении
+  padding-right: 10px; // Отступ для скроллбара
+  
+  // Кастомный скроллбар
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    
+    &:hover {
+      background: #555;
+    }
+  }
 }
 
 .header__list_item {
   margin-bottom: 20px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .header__list_item span {
@@ -148,4 +182,91 @@
   align-items: center;
   gap: 5px;
   color: var(--second-main-color);
+}
+
+
+.sidebarMenu__footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+hr {
+  display: none; // Или удали из JSX
+}
+
+.sidebarMenu__sale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.sidebarMenu__salePrice {
+  color: red;
+}
+
+.sidebarMenu__totalPrice {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.sidebarMenu__label {
+  font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+  font-weight: 500;
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.sidebarMenu__total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.sidebarMenu__checkout {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebarMenu__checkoutButton {
+  margin-top: 30px;
+  margin-inline: auto;
+  width: 80%;
+  padding: 12px 0;
+  background-color: var(--color-dark-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-primary);
+  font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+  cursor: pointer;
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.socialIcon {
+  display: flex;
+  gap: 10px;
+  font-size: 24px;
+  color: var(--color-text-primary);
+
+  &:hover {
+    color: var(--color-text-accent);
+  }
+}
+
+.sidebarMenu__contactsInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  flex-shrink: 0;
 }
