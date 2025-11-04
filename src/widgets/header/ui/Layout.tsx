@@ -1,11 +1,11 @@
 import s from './styles.module.scss';
-import { TUiHeader } from '../types';
+import { IUiHeader } from '../types';
 import { UiMenu } from './components/menu/Menu';
 import { UiBurgerIcon } from './components/icons-block/BurgerIcon';
 import { UiIconsBlock } from './components/icons-block/IconsBlock';
 import { UiSearchInput } from '@/widgets/header/ui/components/search-input/SearchInput.tsx';
 
-export const UiHeader: React.FC<TUiHeader> = ({ logo, dropDown, cart }) => {
+export const UiHeader: React.FC<IUiHeader> = ({ logo, dropDown, cart, toggleDropdown }) => {
   return (
     <header className={s.header}>
       <div className={s.headerBlock}>
@@ -15,7 +15,7 @@ export const UiHeader: React.FC<TUiHeader> = ({ logo, dropDown, cart }) => {
         </div>
         <UiMenu dropDown={dropDown} />
         <UiSearchInput />
-        <UiIconsBlock />
+        <UiIconsBlock toggleDropdown={toggleDropdown} />
       </div>
       {cart}
     </header>

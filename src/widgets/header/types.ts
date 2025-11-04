@@ -1,6 +1,10 @@
 import { ReactNode } from 'react';
 
-export type TUiHeader = {
+export interface IIconsBlock {
+  toggleDropdown: () => void;
+}
+
+export interface IUiHeader extends IIconsBlock {
   logo: ReactNode;
   dropDown: ReactNode;
   cart: ReactNode;

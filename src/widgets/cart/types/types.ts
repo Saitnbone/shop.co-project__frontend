@@ -1,4 +1,6 @@
 export interface UiCartProps {
+  open: boolean;
+  toggleDropdown: () => void;
   CartItem: React.ComponentType<{ cartItem: ICartItem }>;
   LogoUI: React.ComponentType;
 }
