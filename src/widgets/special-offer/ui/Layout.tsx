@@ -5,10 +5,17 @@ import { ButtonColor, ButtonType } from '@/shared/ui/button/types.ts';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { FullBg } from '@ui/fullBg';
+import { Link } from 'react-router-dom';
 
 export const UISpecialOffer = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
+
+  // const navigate = useNavigate();
+
+  // const handleSignUp = () => {
+  //   navigate('/login');
+  // };
 
   const handleClick = () => {
     setIsClosing(true);
@@ -29,9 +36,9 @@ export const UISpecialOffer = () => {
         <section className={s.content}>
           <div className={s.text}>
             Sign up and get 20% off your first order.{' '}
-            <a href="#" className={s.link}>
+            <Link to="/login" className={s.link}>
               Sign Up Now
-            </a>
+            </Link>
           </div>
           <Button
             onClick={handleClick}

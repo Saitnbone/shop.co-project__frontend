@@ -11,26 +11,28 @@ import {
   CartPage,
   ProfilePage,
   NotFoundPage,
-  // AuthPage,
+  AuthPage,
 } from '@/pages/index';
+import { ProtectedRoute } from '@/shared/ui/protected-route/ProtectedRoute';
 import App from '@/app/App';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      {/* Общие страницы */}
+      {/* Публичные роуты (без авторизации) */}
       <Route index element={<MainPage />} />
       <Route path="brands" element={<BrandsPage />} />
       <Route path="cart" element={<CartPage />} />
-
-      {/* Роуты страницы каталога */}
       <Route path="catalog" element={<CatalogPage />} />
       <Route path="catalog/:cardId" element={<CardPage />} />
+      <Route path="login" element={<AuthPage />} />
 
       {/* Защищенные страницы профиля */}
       {/* <Route path="login" element={<AuthPage />} /> */}
-      <Route path="profile" element={<ProfilePage />} />
-      {/* <Route path="settings" element={<SettingsPage />} /> */}
+      <Route path="/" element={<ProtectedRoute />}>
+        <Route path="profile" element={<ProfilePage />} />
+        {/* <Route path="settings" element={<SettingsPage />} /> */}
+      </Route>
 
       {/* 404 - для прочих роутов которые не подключены к роутингу */}
       <Route path="*" element={<NotFoundPage />} />
