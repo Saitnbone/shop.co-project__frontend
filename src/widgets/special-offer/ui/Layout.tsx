@@ -10,13 +10,6 @@ import { Link } from 'react-router-dom';
 export const UISpecialOffer = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
-
-  // const navigate = useNavigate();
-
-  // const handleSignUp = () => {
-  //   navigate('/login');
-  // };
-
   const handleClick = () => {
     setIsClosing(true);
   };
