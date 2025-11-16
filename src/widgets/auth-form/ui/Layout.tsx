@@ -42,7 +42,7 @@ export const UiAuthForm = () => {
         }
         // User is not logged in
         await registerUser({
-          name: formData.name,
+          username: formData.name,
           email: formData.email,
           password: formData.password,
         });

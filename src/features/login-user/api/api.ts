@@ -11,7 +11,7 @@ export const loginUser = async (data: TLogin) => {
         },
         credentials: 'include',
         body: JSON.stringify({
-          userLogin: data.login,
+          email: data.login,
           password: data.password,
         }),
       }
