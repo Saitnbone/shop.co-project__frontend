@@ -1,10 +1,70 @@
-import { userData } from '../model/data';
+// src/widgets/profile-page-widgets/user-personal-info/ui/Layout.tsx
+import { useState } from 'react';
+import { userData as initialData } from '../model/data';
 import s from './styles.module.scss';
+import { FiEdit2, FiSave, FiX } from 'react-icons/fi';
 
 export const UiUserPersonalInfo = () => {
+  const [userData, setUserData] = useState(initialData);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedData, setEditedData] = useState(initialData);
+
+  const handleEdit = () => {
+    setIsEditing(true);
+    setEditedData(userData);
+  };
+
+  const handleSave = () => {
+    setUserData(editedData);
+    setIsEditing(false);
+    // TODO: Отправить данные на бэкенд
+    console.log('Saved data:', editedData);
+  };
+
+  const handleCancel = () => {
+    setEditedData(userData);
+    setIsEditing(false);
+  };
+
+  const handleChange = (field: string, value: string) => {
+    setEditedData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const handleCardChange = (value: string) => {
+    setEditedData((prev) => ({
+      ...prev,
+      cardInfo: {
+        ...prev.cardInfo,
+        cardNumber: value,
+      },
+    }));
+  };
+
   return (
     <div className={s.userPersonalInfo}>
-      <h2 className={s.title}>User Personal Info</h2>
+      <div className={s.header}>
+        <h2 className={s.title}>User Personal Info</h2>
+        <div className={s.actions}>
+          {!isEditing ? (
+            <button onClick={handleEdit} className={s.editButton}>
+              <FiEdit2 /> Edit
+            </button>
+          ) : (
+            <>
+              <button onClick={handleSave} className={s.saveButton}>
+                <FiSave /> Save
+              </button>
+              <button onClick={handleCancel} className={s.cancelButton}>
+                <FiX /> Cancel
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+
       <div className={s.userInfoContainer}>
         <div className={s.userAvatar}>
           {userData.avatar ? (
@@ -29,32 +89,95 @@ export const UiUserPersonalInfo = () => {
             </svg>
           )}
         </div>
+
         <div className={s.userDetails}>
           <div className={s.infoCard}>
             <h3 className={s.cardTitle}>Personal Information</h3>
             <ul className={s.userInformationList}>
               <li className={s.userInformationItem}>
-                <strong>Full Name:</strong> {userData.name}
+                <strong>Full Name:</strong>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={editedData.name}
+                    onChange={(e) => handleChange('name', e.target.value)}
+                    className={s.editInput}
+                  />
+                ) : (
+                  <span>{userData.name}</span>
+                )}
               </li>
               <li className={s.userInformationItem}>
-                <strong>Email:</strong> {userData.email}
+                <strong>Email:</strong>
+                {isEditing ? (
+                  <input
+                    type="email"
+                    value={editedData.email}
+                    onChange={(e) => handleChange('email', e.target.value)}
+                    className={s.editInput}
+                  />
+                ) : (
+                  <span>{userData.email}</span>
+                )}
               </li>
               <li className={s.userInformationItem}>
-                <strong>Phone:</strong> {userData.phone}
+                <strong>Phone:</strong>
+                {isEditing ? (
+                  <input
+                    type="tel"
+                    value={editedData.phone}
+                    onChange={(e) => handleChange('phone', e.target.value)}
+                    className={s.editInput}
+                  />
+                ) : (
+                  <span>{userData.phone}</span>
+                )}
               </li>
               <li className={s.userInformationItem}>
-                <strong>Address:</strong> {userData.address}
+                <strong>Address:</strong>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={editedData.address}
+                    onChange={(e) => handleChange('address', e.target.value)}
+                    className={s.editInput}
+                  />
+                ) : (
+                  <span>{userData.address}</span>
+                )}
               </li>
               <li className={s.userInformationItem}>
-                <strong>Telegram:</strong> {userData.telegram}
+                <strong>Telegram:</strong>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={editedData.telegram}
+                    onChange={(e) => handleChange('telegram', e.target.value)}
+                    className={s.editInput}
+                  />
+                ) : (
+                  <span>{userData.telegram}</span>
+                )}
               </li>
             </ul>
           </div>
+
           <div className={s.infoCard}>
             <h3 className={s.cardTitle}>Card Info</h3>
             <div className={s.userInformationList}>
               <div className={s.userInformationItem}>
-                <strong>Card Number:</strong> {userData.cardInfo.cardNumber}
+                <strong>Card Number:</strong>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={editedData.cardInfo.cardNumber}
+                    onChange={(e) => handleCardChange(e.target.value)}
+                    className={s.editInput}
+                    maxLength={19}
+                  />
+                ) : (
+                  <span>{userData.cardInfo.cardNumber}</span>
+                )}
               </div>
             </div>
           </div>
