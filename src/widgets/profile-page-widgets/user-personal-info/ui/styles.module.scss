@@ -4,7 +4,7 @@
   padding: 30px;
   block-size: auto;
   transition: transform 0.3s ease;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #ccc;
   background-color: var(--color-primary);
 }
 
@@ -122,15 +122,11 @@
 }
 
 .infoCard {
-  background: var(--color-secondary-2);
-  border-radius: var(--border-radius-primary);
+  background: var(--color-secondary-3);
+  border-radius: var(--border-radius-secondary);
   padding: 20px;
   transition: all 0.3s ease;
   border: 1px solid #e0e0e0;
-
-  &:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
 }
 
 .cardTitle {
@@ -139,7 +135,7 @@
   margin-bottom: 15px;
   color: var(--color-dark-primary);
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--color-dark-primary);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .userInformationList {
