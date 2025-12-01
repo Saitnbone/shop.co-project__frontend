@@ -4,6 +4,9 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import { loginUser } from '@/features/login-user/api/api';
 import { registerUser } from '@/features/register-user/api/api';
+import { useFormValidation } from '../lib/useFormValidation';
+import { validationRules } from '../lib/validationRules';
+import { inputFilters } from '../lib/inputFilters';
 import s from './styles.module.scss';
 
 export const UiAuthForm = () => {
@@ -16,6 +19,62 @@ export const UiAuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  const validationSchema = {
+    name: [
+      validationRules.required(),
+      validationRules.minLength(2),
+      validationRules.maxLength(100),
+      validationRules.name(),
+    ],
+    email: [validationRules.required(), validationRules.email()],
+    password: [
+      validationRules.required(),
+      validationRules.minLength(6),
+      validationRules.maxLength(100),
+    ],
+    confirmPassword: isLogin
+      ? []
+      : [
+          validationRules.required(),
+          validationRules.minLength(6),
+          validationRules.maxLength(100),
+        ],
+  };
+
+  const {
+    // form,
+    touched,
+    errors,
+    // validateForm,
+    handleFieldChange,
+    handleFieldBlur,
+    // isFormValid,
+    // resetForm,
+  } = useFormValidation(formData, validationSchema);
+
+  const handleNameInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const filteredInput = inputFilters.nameFilter(event.target.value);
+    handleFieldChange('name', filteredInput);
+    setFormData({ ...formData, name: filteredInput });
+  };
+  const handleEmailInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const filteredInput = inputFilters.emailFilter(event.target.value);
+    handleFieldChange('email', filteredInput);
+    setFormData({ ...formData, email: filteredInput });
+  };
+  const handlePasswordInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const filteredInput = inputFilters.passwordFilter(event.target.value);
+    handleFieldChange('password', filteredInput);
+    setFormData({ ...formData, password: filteredInput });
+  };
+  const handleConfirmPasswordInput = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const filteredInput = inputFilters.passwordFilter(event.target.value);
+    handleFieldChange('confirmPassword', filteredInput);
+    setFormData({ ...formData, confirmPassword: filteredInput });
+  };
 
   const toggleMode = () => {
     setIsLogin(!isLogin);
@@ -73,12 +132,17 @@ export const UiAuthForm = () => {
               placeholder="Full Name"
               className={s.input}
               value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
+              // onChange={(e) =>
+              //   setFormData({ ...formData, name: e.target.value })
+              // }
+              onBlur={() => handleFieldBlur('name')}
+              onChange={handleNameInput}
               autoComplete="name"
               required
             />
+          )}
+          {errors.name && touched.name && (
+            <div className={s.fieldError}>{errors.name}</div>
           )}
 
           <input
@@ -87,12 +151,17 @@ export const UiAuthForm = () => {
             placeholder="Email"
             className={s.input}
             value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
+            // onChange={(e) =>
+            //   setFormData({ ...formData, email: e.target.value })
+            // }
+            onBlur={() => handleFieldBlur('email')}
+            onChange={handleEmailInput}
             autoComplete="email"
             required
           />
+          {errors.email && touched.email && (
+            <div className={s.fieldError}>{errors.email}</div>
+          )}
 
           <input
             id="password"
@@ -100,12 +169,17 @@ export const UiAuthForm = () => {
             placeholder="Password"
             className={s.input}
             value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
+            // onChange={(e) =>
+            //   setFormData({ ...formData, password: e.target.value })
+            // }
+            onChange={handlePasswordInput}
+            onBlur={() => handleFieldBlur('password')}
             autoComplete="current-password"
             required
           />
+          {errors.password && touched.password && (
+            <div className={s.fieldError}>{errors.password}</div>
+          )}
 
           {!isLogin && (
             <input
@@ -113,12 +187,17 @@ export const UiAuthForm = () => {
               type="password"
               placeholder="Confirm Password"
               className={s.input}
-              onChange={(e) =>
-                setFormData({ ...formData, confirmPassword: e.target.value })
-              }
+              // onChange={(e) =>
+              //   setFormData({ ...formData, confirmPassword: e.target.value })
+              // }
+              onBlur={() => handleFieldBlur('confirmPassword')}
+              onChange={handleConfirmPasswordInput}
               autoComplete="new-password"
               required
             />
+          )}
+          {errors.confirmPassword && touched.confirmPassword && (
+            <div className={s.fieldError}>{errors.confirmPassword}</div>
           )}
 
           {isLogin && (
