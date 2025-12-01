@@ -126,78 +126,74 @@ export const UiAuthForm = () => {
         {error && <div className={s.errorMessage}>{error}</div>}{' '}
         <form onSubmit={handleSubmit} className={s.form}>
           {!isLogin && (
+            <div>
+              <input
+                id="name"
+                type="text"
+                placeholder="Full Name"
+                className={s.input}
+                value={formData.name}
+                onBlur={() => handleFieldBlur('name')}
+                onChange={handleNameInput}
+                autoComplete="name"
+                required
+              />
+              {errors.name && touched.name && (
+                <div className={s.fieldError}>{errors.name}</div>
+              )}
+            </div>
+          )}
+
+          <div>
             <input
-              id="name"
-              type="text"
-              placeholder="Full Name"
+              id="email"
+              type="email"
+              placeholder="Email"
               className={s.input}
-              value={formData.name}
-              // onChange={(e) =>
-              //   setFormData({ ...formData, name: e.target.value })
-              // }
-              onBlur={() => handleFieldBlur('name')}
-              onChange={handleNameInput}
-              autoComplete="name"
+              value={formData.email}
+              onBlur={() => handleFieldBlur('email')}
+              onChange={handleEmailInput}
+              autoComplete="email"
               required
             />
-          )}
-          {errors.name && touched.name && (
-            <div className={s.fieldError}>{errors.name}</div>
-          )}
+            {errors.email && touched.email && (
+              <div className={s.fieldError}>{errors.email}</div>
+            )}
+          </div>
 
-          <input
-            id="email"
-            type="email"
-            placeholder="Email"
-            className={s.input}
-            value={formData.email}
-            // onChange={(e) =>
-            //   setFormData({ ...formData, email: e.target.value })
-            // }
-            onBlur={() => handleFieldBlur('email')}
-            onChange={handleEmailInput}
-            autoComplete="email"
-            required
-          />
-          {errors.email && touched.email && (
-            <div className={s.fieldError}>{errors.email}</div>
-          )}
-
-          <input
-            id="password"
-            type="password"
-            placeholder="Password"
-            className={s.input}
-            value={formData.password}
-            // onChange={(e) =>
-            //   setFormData({ ...formData, password: e.target.value })
-            // }
-            onChange={handlePasswordInput}
-            onBlur={() => handleFieldBlur('password')}
-            autoComplete="current-password"
-            required
-          />
-          {errors.password && touched.password && (
-            <div className={s.fieldError}>{errors.password}</div>
-          )}
+          <div>
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              className={s.input}
+              value={formData.password}
+              onChange={handlePasswordInput}
+              onBlur={() => handleFieldBlur('password')}
+              autoComplete="current-password"
+              required
+            />
+            {errors.password && touched.password && (
+              <div className={s.fieldError}>{errors.password}</div>
+            )}
+          </div>
 
           {!isLogin && (
-            <input
-              id="confirmPassword"
-              type="password"
-              placeholder="Confirm Password"
-              className={s.input}
-              // onChange={(e) =>
-              //   setFormData({ ...formData, confirmPassword: e.target.value })
-              // }
-              onBlur={() => handleFieldBlur('confirmPassword')}
-              onChange={handleConfirmPasswordInput}
-              autoComplete="new-password"
-              required
-            />
-          )}
-          {errors.confirmPassword && touched.confirmPassword && (
-            <div className={s.fieldError}>{errors.confirmPassword}</div>
+            <div>
+              <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                className={s.input}
+                onBlur={() => handleFieldBlur('confirmPassword')}
+                onChange={handleConfirmPasswordInput}
+                autoComplete="new-password"
+                required
+              />
+              {errors.confirmPassword && touched.confirmPassword && (
+                <div className={s.fieldError}>{errors.confirmPassword}</div>
+              )}
+            </div>
           )}
 
           {isLogin && (
