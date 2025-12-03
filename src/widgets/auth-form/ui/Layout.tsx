@@ -10,6 +10,8 @@ import { inputFilters } from '../lib/inputFilters';
 import s from './styles.module.scss';
 
 export const UiAuthForm = () => {
+  const params = new URLSearchParams(window.location.search);
+  const errorGoogle = params.get('error');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -123,6 +125,11 @@ export const UiAuthForm = () => {
         <h2 className={s.title}>
           {isLogin ? 'Log into Shop.co' : 'Create Account'}
         </h2>
+        <div>
+          {errorGoogle === 'google_auth_failed' && (
+            <p className={s.fieldError}>Google authorization failed</p>
+          )}
+        </div>
         {error && <div className={s.errorMessage}>{error}</div>}{' '}
         <form onSubmit={handleSubmit} className={s.form}>
           {!isLogin && (
@@ -212,7 +219,13 @@ export const UiAuthForm = () => {
           <span className={s.dividerLine}></span>
         </div>
         <div className={s.socialButtons}>
-          <button className={s.socialButton}>
+          <button
+            onClick={() =>
+              (window.location.href =
+                'http://localhost:3000/api/users/login/google')
+            }
+            className={s.socialButton}
+          >
             <FcGoogle size={20} />
             <span>Google</span>
           </button>
