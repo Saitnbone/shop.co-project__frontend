@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getNewArrivalsProducts } from '../api/api';
-import { newArrivalsData } from '../model/newArrivalsData';
 import { TNewArrivalsItem } from '../model/newArrivalsData';
 import { TNewArrivalsProps } from '../types/types';
 import s from './styles.module.scss';

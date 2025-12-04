@@ -1,9 +1,11 @@
-import { FC, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { reviewsData } from '../model/reviewsData';
+import { TReviewItem } from '../model/reviewsData';
+import { getTopComments } from '../../happy-customers/api/api';
 import s from './styles.module.scss';
 
-export const UiHappyCustomers: FC = () => {
+export const UiHappyCustomers = () => {
+  const [reviews, setReviews] = useState<TReviewItem[]>([]);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'center',
@@ -34,6 +36,14 @@ export const UiHappyCustomers: FC = () => {
     onSelected();
   }, [emblaApi, onSelected]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getTopComments();
+      setReviews(data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className={s.container}>
       <div className={s.header}>
@@ -55,7 +65,7 @@ export const UiHappyCustomers: FC = () => {
       </div>
       <div className={s.embla} ref={emblaRef}>
         <div className={s.embla__container}>
-          {reviewsData.map((sld, index) => (
+          {reviews.map((sld, index) => (
             <div
               className={`${s.embla__slide} ${
                 Math.abs(index - selectedIndex) <= 1 ? '' : s.blurred
@@ -70,10 +80,10 @@ export const UiHappyCustomers: FC = () => {
                 <img src="/star.png" alt="Star" />
               </div>
               <div className={s.slideReviewerContainer}>
-                <h3 className={s.slideReviewer}>{sld.reviewer}</h3>
+                <h3 className={s.slideReviewer}>{sld.userName}</h3>
                 <img src="/confirm.svg" alt="Confirm icon" />
               </div>
-              <p className={s.slideText}>{sld.text}</p>
+              <p className={s.slideText}>{sld.description}</p>
             </div>
           ))}
         </div>

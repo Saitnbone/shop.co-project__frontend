@@ -1,4 +1,6 @@
-export const getTopComments = async () => {
+import { TReviewItem } from '../model/reviewsData';
+
+export const getTopComments = async (): Promise<TReviewItem[]> => {
   try {
     const response = await fetch(
       `${import.meta.env.VITE_API_URL}/comments/top-comments`
