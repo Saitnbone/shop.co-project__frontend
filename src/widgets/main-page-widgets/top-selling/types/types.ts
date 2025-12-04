@@ -10,3 +10,12 @@ export interface IProduct {
 export type TTopSellingProps = {
   CardTemplate: React.FC<{ item: IProduct }>;
 };
+
+export type TTopSellingItem = {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  rating: number;
+  price: number;
+};
