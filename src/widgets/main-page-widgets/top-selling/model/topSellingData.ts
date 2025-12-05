@@ -37,7 +37,7 @@ export type TTopSellingItem = {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
+  image: string;
   rating: number;
   price: number;
 };
