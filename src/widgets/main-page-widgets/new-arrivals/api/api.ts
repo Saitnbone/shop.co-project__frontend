@@ -1,4 +1,6 @@
-export const getNewArrivalsProducts = async () => {
+import { TNewArrivalsItem } from '../model/newArrivalsData';
+
+export const getNewArrivalsProducts = async (): Promise<TNewArrivalsItem[]> => {
   try {
     const response = await fetch(
       `${import.meta.env.VITE_API_URL}/products/new-arrivals`

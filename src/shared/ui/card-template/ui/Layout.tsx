@@ -13,7 +13,7 @@ export const UiCardTemplate = ({ item }: { item: IProduct }) => {
     <div className={s.item} key={item.id} onClick={handleClick}>
       <img className={s.itemImage} src={item.imageUrl} alt="image" />
       <div className={s.itemInfo}>
-        <h4 className={s.itemTitle}>{item.title}</h4>
+        <h4 className={s.itemTitle}>{item.name}</h4>
         <div className={s.itemRatingBlock}>
           <div>
             <img src="/star.png" alt="Star" />
@@ -23,7 +23,7 @@ export const UiCardTemplate = ({ item }: { item: IProduct }) => {
             <img src="/star.png" alt="Star" />
           </div>
           <div className={s.itemRating}>
-            <span>{item.rating}</span>
+            <span>{item.raiting}</span>
             <span> / 5</span>
           </div>
         </div>

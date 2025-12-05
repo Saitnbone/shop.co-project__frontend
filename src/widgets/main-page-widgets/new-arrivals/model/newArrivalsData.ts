@@ -1,43 +1,14 @@
-// export const newArrivalsData = [
-//   {
-//     id: '1',
-//     title: 'Shirt',
-//     description: 'Description for New Arrival 1',
-//     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
-//     rating: 4.5,
-//     price: 29.99,
-//   },
-//   {
-//     id: '2',
-//     title: 'Shirt',
-//     description: 'Description for New Arrival 2',
-//     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
-//     rating: 4.5,
-//     price: 39.99,
-//   },
-//   {
-//     id: '3',
-//     title: 'Shirt',
-//     description: 'Description for New Arrival 3',
-//     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
-//     rating: 4.5,
-//     price: 49.99,
-//   },
-//   {
-//     id: '4',
-//     title: 'Shirt',
-//     description: 'Description for New Arrival 4',
-//     imageUrl: '/e01f5d3cd9029bd465a4c7158689ab1619693014.png',
-//     rating: 4.5,
-//     price: 59.99,
-//   },
-// ];
-
 export type TNewArrivalsItem = {
   id: string;
-  title: string;
+  name: string;
   description: string;
-  imageUrl: string;
-  rating: number;
   price: number;
+  quantity: number;
+  rating: number;
+  categoryId: string;
+  createdAt: string;
+  category: {
+    id: string;
+    name: string;
+  }; 
 };
