@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { getProductById } from '../api/api';
+import { getProductById } from '@/shared/api/getProductInfo';
 import { IProduct } from '../types/types';
 import s from './styles.module.scss';
 

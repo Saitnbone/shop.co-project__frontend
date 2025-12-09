@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { TProductResponse, TProductDetails } from '@/model/models';
+import { getProductById } from '@/shared/api/getProductInfo';
 import type { ProductSettingsProps } from '../types/types';
 import s from './styles.module.scss';
 
@@ -8,11 +12,22 @@ export const UiProductSettings = ({
   ChooseQuantity,
   AddToCart,
 }: ProductSettingsProps) => {
+  const [product, setProduct] = useState<TProductDetails | null>(null);
+  const { cardId } = useParams<{ cardId: string }>();
+
+  useEffect(() => {
+    async function fetchProduct(): Promise<TProductResponse | void> {
+      const productResponse = await getProductById(cardId || '');
+      setProduct(productResponse);
+    }
+    fetchProduct();
+  }, [cardId]);
+
   return (
     <div className={s.productSettings}>
       <SelectImage />
       <div className={s.productInformation}>
-        <h2 className={s.productName}>One Life Graphic T-shirt</h2>
+        <h2 className={s.productName}>{product?.product.name}</h2>
         <div className={s.productRating}>
           <div className={s.stars}>
             <img className={s.star} src="/star.png" alt="Star rating" />
@@ -21,13 +36,12 @@ export const UiProductSettings = ({
             <img className={s.star} src="/star.png" alt="Star rating" />
             <img className={s.star} src="/star.png" alt="Star rating" />
           </div>
-          <span className={s.productRatingValue}>4.6/5</span>
+          <span className={s.productRatingValue}>
+            {product?.product.raiting} /5
+          </span>
         </div>
-        <span className={s.productPrice}>$19.99</span>
-        <p className={s.productDescription}>
-          This graphic t-shirt which is perfect for any occasion. Crafted from a
-          soft and breathable fabric, it offers superior comfort and style.
-        </p>
+        <span className={s.productPrice}>${product?.product.price}</span>
+        <p className={s.productDescription}>{product?.product.description}</p>
         <SelectColor />
         <ChooseSize />
         <div className={s.purchaseSection}>
