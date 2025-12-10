@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TProductResponse, TProductDetails } from '@/model/models';
 import { getProductById } from '@/shared/api/getProductInfo';
+import ReactStars from 'react-rating-stars-component';
 import type { ProductSettingsProps } from '../types/types';
 import s from './styles.module.scss';
 
@@ -29,13 +30,15 @@ export const UiProductSettings = ({
       <div className={s.productInformation}>
         <h2 className={s.productName}>{product?.product.name}</h2>
         <div className={s.productRating}>
-          <div className={s.stars}>
-            <img className={s.star} src="/star.png" alt="Star rating" />
-            <img className={s.star} src="/star.png" alt="Star rating" />
-            <img className={s.star} src="/star.png" alt="Star rating" />
-            <img className={s.star} src="/star.png" alt="Star rating" />
-            <img className={s.star} src="/star.png" alt="Star rating" />
-          </div>
+          <ReactStars
+            key={product?.product.raiting}
+            count={5}
+            value={Number(product?.product.raiting) || 0}
+            size={24}
+            isHalf={true}
+            activeColor="#ffd700"
+            edit={false}
+          />
           <span className={s.productRatingValue}>
             {product?.product.raiting} /5
           </span>
