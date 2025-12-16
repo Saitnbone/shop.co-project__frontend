@@ -1,7 +1,11 @@
-import { reviewsAndRatingsData } from '../model/data';
+import ReactStars from 'react-rating-stars-component';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/providers/store';
 import s from './styles.module.scss';
 
 export const UiReviewsAndRatings = () => {
+  const { comments } = useSelector((state: RootState) => state.selectedProduct);
+
   return (
     <section className={s.reviewsAndRatings}>
       <div className={s.container}>
@@ -21,16 +25,18 @@ export const UiReviewsAndRatings = () => {
         </div>
 
         <div className={s.reviewsContainer}>
-          {reviewsAndRatingsData.map((review) => (
-            <div key={review.id} className={s.review}>
+          {comments.map((comment) => (
+            <div key={comment.id} className={s.review}>
               <div className={s.rating}>
-                <div className={s.stars}>
-                  <img src="/star.png" alt="Star" />
-                  <img src="/star.png" alt="Star" />
-                  <img src="/star.png" alt="Star" />
-                  <img src="/star.png" alt="Star" />
-                  <img src="/star.png" alt="Star" />
-                </div>
+                <ReactStars
+                  key={comment.id}
+                  count={5}
+                  value={Number(comment.rating) || 0}
+                  size={24}
+                  isHalf={true}
+                  activeColor="#ffd700"
+                  edit={false}
+                />
                 <div className={s.editIcon}>
                   <img
                     className={s.editIconImage}
@@ -40,12 +46,14 @@ export const UiReviewsAndRatings = () => {
                 </div>
               </div>
               <div className={s.userInfo}>
-                <span className={s.userName}>{review.user.name}</span>
+                <span className={s.userName}>{comment.userName}</span>
                 <img src="/verification-icon.svg" alt="verification icon" />
               </div>
-              <div className={s.comment}>{review.comment}</div>
+              <div className={s.comment}>{comment.description}</div>
               <div className={s.user}>
-                <span className={s.datePosted}>Posted on {review.date}</span>
+                <span className={s.datePosted}>
+                  Posted on {comment.createdAt}
+                </span>
               </div>
             </div>
           ))}

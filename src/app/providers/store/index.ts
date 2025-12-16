@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import filterReducer from '@/features/catalog-filters/store/filtersSlice';
 import userReducer from '@/shared/slice/userSlice';
+import { selectedProductReducer } from '@/entities/product';
 
 export const store = configureStore({
   reducer: {
     filters: filterReducer,
     userInfo: userReducer,
+    selectedProduct: selectedProductReducer,
   },
 });
 
