@@ -52,7 +52,7 @@ export const productSlice = createSlice({
         state.product = action.payload.product;
         state.comments = action.payload.comment || [];
         state.category = action.payload.category || null;
-        state.variants = action.payload.variants || [];
+        state.variants = action.payload.product.variants || [];
       })
       .addCase(fetchProduct.rejected, (state, action) => {
         state.loading = false;

@@ -22,4 +22,8 @@
   inline-size: 37px;
   block-size: 37px;
   border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
