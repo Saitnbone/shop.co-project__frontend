@@ -1,5 +1,9 @@
 import { UiReviewsAndRatings } from "../ui/Layout"
 
-export const ReviewsAndRatings = () => { 
-    return <UiReviewsAndRatings />
+interface ReviewsAndRatingsProps {
+  onWriteReviewClick: () => void;
+}
+
+export const ReviewsAndRatings = ({ onWriteReviewClick }: ReviewsAndRatingsProps) => {
+    return <UiReviewsAndRatings onWriteReviewClick={onWriteReviewClick} />
 }

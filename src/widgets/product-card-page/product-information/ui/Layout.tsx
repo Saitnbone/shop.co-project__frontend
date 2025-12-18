@@ -3,6 +3,7 @@ import { ProductInformationProps } from '../types/types';
 import s from './styles.module.scss';
 
 export const UiProductInformation = ({
+  onWriteReviewClick,
   ReviewsAndRatings,
   ProductDetails,
   ProductFAQ,
@@ -11,7 +12,7 @@ export const UiProductInformation = ({
 
   const tabs = [
     { label: 'Product Details', component: <ProductDetails /> },
-    { label: 'Rating & Reviews', component: <ReviewsAndRatings /> },
+    { label: 'Rating & Reviews', component: <ReviewsAndRatings onWriteReviewClick={onWriteReviewClick} /> },
     { label: 'FAQs', component: <ProductFAQ /> },
   ];
 

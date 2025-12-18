@@ -3,7 +3,13 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/app/providers/store';
 import s from './styles.module.scss';
 
-export const UiReviewsAndRatings = () => {
+interface ReviewsAndRatingsProps {
+  onWriteReviewClick: () => void;
+}
+
+export const UiReviewsAndRatings = ({
+  onWriteReviewClick,
+}: ReviewsAndRatingsProps) => {
   const { comments } = useSelector((state: RootState) => state.selectedProduct);
 
   return (
@@ -12,7 +18,7 @@ export const UiReviewsAndRatings = () => {
         <div className={s.headerContainer}>
           <div className={s.header}>
             <h3 className={s.title}>All Reviews</h3>
-            <span className={s.reviewCount}>(451)</span>
+            <span className={s.reviewCount}>({comments.length})</span>
           </div>
 
           <div className={s.controls}>
@@ -20,7 +26,9 @@ export const UiReviewsAndRatings = () => {
               <img src="/settings-icon.svg" alt="Settings icon" />
             </div>
             <div className={s.latest}>Latest</div>
-            <div className={s.writeReview}>Write a review</div>
+            <div onClick={onWriteReviewClick} className={s.writeReview}>
+              Write a review
+            </div>
           </div>
         </div>
 
