@@ -1,9 +1,9 @@
 export interface IProduct {
   id: string;
-  title: string;
+  name: string;
   description: string;
-  imageUrl: string;
-  rating: number;
+  image: string;
+  raiting: number;
   price: number;
 }
 
@@ -13,9 +13,9 @@ export type TTopSellingProps = {
 
 export type TTopSellingItem = {
   id: string;
-  title: string;
+  name: string; 
   description: string;
-  imageUrl: string;
-  rating: number;
+  image: string; 
+  raiting: number;
   price: number;
 };

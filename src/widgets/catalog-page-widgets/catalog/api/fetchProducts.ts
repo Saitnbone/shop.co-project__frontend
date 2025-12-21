@@ -14,13 +14,12 @@ export interface IFetchProductsParams {
 
 export interface IProduct {
   id: string;
-  title: string;
+  name: string;
   description: string;
-  imageUrl: string;
-  rating: number;
+  image: string;
+  raiting: number;
   price: number;
 }
-
 
 export const fetchProducts = async (
   params: IFetchProductsParams

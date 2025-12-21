@@ -1,9 +1,9 @@
 export interface IProduct {
   id: string;
-  title: string;
+  name: string;
   description: string;
-  imageUrl: string;
-  rating: number;
+  image: string;
+  raiting: number;
   price: number;
 }
 
@@ -15,4 +15,4 @@ export interface IUserInfo {
   phoneNumber?: string;
   address?: string;
   // avatarImg?: string;
-} 
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { TProductResponse, TProductDetails } from '@/model/models';
+import { TProductResponse, TProductDetails } from '@/entities/product/index';
 import { getProductById } from '@/shared/api/getProductInfo';
 import ReactStars from 'react-rating-stars-component';
 import type { ProductSettingsProps } from '../types/types';

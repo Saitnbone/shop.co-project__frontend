@@ -3,10 +3,10 @@ import { IProduct } from '../api/fetchProducts';
 
 export type TCardTemplateProps = {
   id: string;
-  title: string;
+  name: string;
   description: string;
-  imageUrl: string;
-  rating: number;
+  image: string;
+  raiting: number;
   price: number;
 };
 
