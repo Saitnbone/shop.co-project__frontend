@@ -1,14 +1,4 @@
-// import { apiClient } from '@/shared/api';
 import { UpdateUserData } from '../types/types';
-
-// export const updateUserData = async (userData: UpdateUserData) => {
-//   try {
-//     await apiClient.put('/users/me-update', userData);
-//   } catch (error) {
-//     console.error('Failed to update user data:', error);
-//     throw error;
-//   }
-// };
 
 export const updateUserData = async (userData: UpdateUserData) => {
   try {

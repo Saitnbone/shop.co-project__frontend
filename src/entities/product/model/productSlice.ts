@@ -1,6 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { getProductById } from '@/shared/api/getProductInfo';
-import { TProduct, TCategory, TComment, TProductVariant } from './model';
+import { TProduct, TCategory, TComment, TProductVariant, TSize } from './model';
 
 interface IProductState {
   product: TProduct | null;
@@ -9,6 +9,9 @@ interface IProductState {
   variants: TProductVariant[];
   loading: boolean;
   error: string | null;
+  selectedColor: string | null;
+  actualSizes: TSize[];
+  currentSize: string | null;
 }
 
 const initialState: IProductState = {
@@ -18,6 +21,10 @@ const initialState: IProductState = {
   variants: [],
   loading: false,
   error: null,
+
+  selectedColor: null,
+  actualSizes: [],
+  currentSize: null,
 };
 
 // Async thunk for product loading
@@ -39,6 +46,18 @@ export const productSlice = createSlice({
       state.category = null;
       state.variants = [];
       state.error = null;
+    },
+    // New reducers for color and size management
+    setColor: (state, action: PayloadAction<string | null>) => {
+      state.selectedColor = action.payload;
+    },
+
+    setActualSizes: (state, action: PayloadAction<TSize[]>) => {
+      state.actualSizes = action.payload;
+    },
+
+    setSize: (state, action: PayloadAction<string | null>) => {
+      state.currentSize = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -63,5 +82,6 @@ export const productSlice = createSlice({
 
 const selectedProductReducer = productSlice.reducer;
 
-export const { clearProduct } = productSlice.actions;
+export const { clearProduct, setColor, setActualSizes, setSize } =
+  productSlice.actions;
 export { selectedProductReducer };
