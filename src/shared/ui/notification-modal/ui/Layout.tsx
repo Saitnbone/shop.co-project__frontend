@@ -21,7 +21,9 @@ export const UiNotificationModal = () => {
   }, [isOpen, dispatch]);
 
   return (
-    <div className={s.notificationModal}>
+    <div
+      className={`${s.notificationModal} ${isOpen ? s.inactivityModal_visible : ''}`} // <-- ДОБАВИЛ класс видимости
+    >
       <div className={`${s.notificationModalHeader} ${s[eventType]}`}></div>
       <div className={s.notificationModalContent}>
         <span className={s.notificationModalTitle}>{titleText}</span>

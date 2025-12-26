@@ -13,6 +13,7 @@ interface IProductState {
   actualSizes: TSize[];
   currentSize: string | null;
   quantity: number;
+  currentVariantId: string | null;
 }
 
 const initialState: IProductState = {
@@ -27,6 +28,7 @@ const initialState: IProductState = {
   actualSizes: [],
   currentSize: null,
   quantity: 1,
+  currentVariantId: null,
 };
 
 // Async thunk for product loading
@@ -52,6 +54,10 @@ export const productSlice = createSlice({
     // New reducers for color and size management
     setColor: (state, action: PayloadAction<string | null>) => {
       state.selectedColor = action.payload;
+    },
+
+    setVariantId: (state, action: PayloadAction<string | null>) => {
+      state.currentVariantId = action.payload;
     },
 
     setActualSizes: (state, action: PayloadAction<TSize[]>) => {
@@ -88,6 +94,6 @@ export const productSlice = createSlice({
 
 const selectedProductReducer = productSlice.reducer;
 
-export const { clearProduct, setColor, setActualSizes, setSize, setQuantity } =
+export const { clearProduct, setColor, setActualSizes, setSize, setQuantity, setVariantId } =
   productSlice.actions;
 export { selectedProductReducer };

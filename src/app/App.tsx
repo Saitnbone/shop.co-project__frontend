@@ -8,6 +8,7 @@ import { SpecialOffer } from '@/widgets/special-offer';
 import { Footer } from '@/widgets/footer';
 import { fetchUserInfo } from '@/shared/slice/userSlice';
 import { useAppDispatch } from '@/shared/utils/useAppDispatch';
+import { NotificationModal } from '@/shared/ui/notification-modal';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <SpecialOffer />
+      <NotificationModal />
       <Header />
       <Outlet />
       <Footer />

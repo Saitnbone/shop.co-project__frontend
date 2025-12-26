@@ -5,6 +5,7 @@ import s from './styles.module.scss';
 import {
   setActualSizes,
   setColor,
+  setVariantId,
 } from '@/entities/product/model/productSlice';
 
 export const UiSelectColor = () => {
@@ -24,9 +25,15 @@ export const UiSelectColor = () => {
     setSelectedColorId(colorId);
     dispatch(setColor(colorId));
 
+    // Задать id варианта по выбранному цвету
+    let currentVariantId = '';
+
     const filterSizesByColor = variants.filter((variant) => {
+      currentVariantId = variant.id;
+
       return variant.color.id === colorId;
     });
+    dispatch(setVariantId(currentVariantId));
 
     const sizes = filterSizesByColor.map((variant) => variant.size);
     dispatch(setActualSizes(sizes));
