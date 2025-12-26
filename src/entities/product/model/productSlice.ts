@@ -12,6 +12,7 @@ interface IProductState {
   selectedColor: string | null;
   actualSizes: TSize[];
   currentSize: string | null;
+  quantity: number;
 }
 
 const initialState: IProductState = {
@@ -25,6 +26,7 @@ const initialState: IProductState = {
   selectedColor: null,
   actualSizes: [],
   currentSize: null,
+  quantity: 1,
 };
 
 // Async thunk for product loading
@@ -56,6 +58,10 @@ export const productSlice = createSlice({
       state.actualSizes = action.payload;
     },
 
+    setQuantity: (state, action: PayloadAction<number>) => {
+      state.quantity = action.payload;
+    },
+
     setSize: (state, action: PayloadAction<string | null>) => {
       state.currentSize = action.payload;
     },
@@ -82,6 +88,6 @@ export const productSlice = createSlice({
 
 const selectedProductReducer = productSlice.reducer;
 
-export const { clearProduct, setColor, setActualSizes, setSize } =
+export const { clearProduct, setColor, setActualSizes, setSize, setQuantity } =
   productSlice.actions;
 export { selectedProductReducer };
