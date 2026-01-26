@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/providers/store';
+import { getCartData } from '../api/api';
 import { useNavigate } from 'react-router-dom';
 import { UiCartProps } from '../types/types';
 import { cartData } from '../model/data';
@@ -11,11 +15,27 @@ export const UiCart = ({
   LogoUI,
 }: UiCartProps) => {
   const navigate = useNavigate();
+  const userId = useSelector((state: RootState) => state.userInfo.userInfo?.id);
 
   const handleGoToCart = () => {
     toggleDropdown();
     navigate('/cart');
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!userId) return;
+      try {
+        const data = await getCartData(userId);
+        console.log('Cart data:', data);
+        return data;
+      } catch (error) {
+        console.error('Error fetching cart data:', error);
+      }
+    };
+
+    fetchData();
+  }, [userId]);
 
   return (
     <div className={`${s.sidebar} ${open ? s.sidebar_open : ''}`}>
