@@ -15,7 +15,7 @@
   &::-webkit-scrollbar {
     display: none;
   }
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 .orderItem {
@@ -52,4 +52,11 @@
 
 .delivered {
   color: var(--color-accent-green);
+}
+
+@media (width <= 1280px) {
+  .userStoreInfo {
+    max-inline-size: 850px;
+    inline-size: 100%;
+  }
 }

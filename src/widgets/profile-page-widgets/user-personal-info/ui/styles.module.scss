@@ -236,3 +236,10 @@
     }
   }
 }
+
+@media (width <= 1280px) {
+  .userPersonalInfo {
+    max-inline-size: 850px;
+    inline-size: 100%;
+  }
+}

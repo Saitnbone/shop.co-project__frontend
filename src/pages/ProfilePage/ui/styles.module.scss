@@ -3,7 +3,7 @@
   justify-content: center;
   margin-inline: clamp(1.0625rem, -0.8643rem + 7.9048vw, 6.25rem);
   align-items: center;
-  margin: 60px;
+  margin-block: 60px;
 }
 
 .infoSection {
@@ -12,4 +12,11 @@
   inline-size: 100%;
   max-inline-size: 1240px;
   gap: 20px;
+}
+
+@media (width <= 1280px) {
+  .infoSection {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
