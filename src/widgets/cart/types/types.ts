@@ -6,11 +6,12 @@ export interface UiCartProps {
 }
 
 export interface ICartItem {
-  id: number;
+  variantId: string;
+  quantity: number;
   image: string;
-  title: string;
-  price: number;
+  name: string;
+  price: string;
   color: string;
   size: string;
-  quantity: number;
 }
+

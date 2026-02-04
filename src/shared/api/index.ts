@@ -18,8 +18,8 @@ class ApiClient {
       headers: {
         'Content-Type': 'application/json',
         ...options.headers,
-        // credentials: 'include',
       },
+      credentials: 'include',
       ...options,
     };
 

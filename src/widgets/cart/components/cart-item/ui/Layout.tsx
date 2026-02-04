@@ -3,18 +3,18 @@ import s from './style.module.scss';
 
 export const UiCartItem = ({ cartItem }: { cartItem: ICartItem }) => {
   return (
-    <div className={s.productItem} key={cartItem.id}>
+    <div className={s.productItem} key={cartItem.variantId}>
       <div className={s.productInfo}>
         <div className={s.imageWrapper}>
           <img
             className={s.productImage}
             src={cartItem.image}
-            alt={cartItem.title}
+            alt={cartItem.name}
           />
         </div>
         <div className={s.productDetails}>
           <div className={s.productTitleRow}>
-            <span className={s.productTitle}>{cartItem.title}</span>
+            <span className={s.productTitle}>{cartItem.name}</span>
             <div className={s.deleteIcon}>
               <img
                 className={s.deleteIconImage}
@@ -32,7 +32,7 @@ export const UiCartItem = ({ cartItem }: { cartItem: ICartItem }) => {
             <span className={s.productColorValue}>{cartItem.color}</span>
           </div>
           <div className={s.priceQuantityRow}>
-            <p className={s.productPrice}>${cartItem.price.toFixed(2)}</p>
+            <p className={s.productPrice}>${cartItem.price}</p>
             <div className={s.quantityControl}>
               <button>-</button>
               <span className={s.productQuantity}>{cartItem.quantity}</span>

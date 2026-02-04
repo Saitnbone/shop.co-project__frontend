@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/providers/store';
-import { getCartData } from '../api/api';
+import { CartApi } from '@/features/cart/api';
 import { useNavigate } from 'react-router-dom';
-import { UiCartProps } from '../types/types';
-import { cartData } from '../model/data';
+import { ICartItem, UiCartProps } from '../types/types';
 import { FaGithub, FaInstagram } from 'react-icons/fa';
 import s from './style.module.scss';
 
@@ -14,6 +13,7 @@ export const UiCart = ({
   CartItem,
   LogoUI,
 }: UiCartProps) => {
+  const [cartData, setCartData] = useState<ICartItem[]>([]);
   const navigate = useNavigate();
   const userId = useSelector((state: RootState) => state.userInfo.userInfo?.id);
 
@@ -26,9 +26,9 @@ export const UiCart = ({
     const fetchData = async () => {
       if (!userId) return;
       try {
-        const data = await getCartData(userId);
+        const data = await CartApi.getCartData(userId);
         console.log('Cart data:', data);
-        return data;
+        setCartData(data);
       } catch (error) {
         console.error('Error fetching cart data:', error);
       }
@@ -49,7 +49,7 @@ export const UiCart = ({
             <h4 className={s.cartTitle}>Cart</h4>
             <div className={s.header__list}>
               {cartData.map((cartItem) => (
-                <div className={s.header__list} key={cartItem.id}>
+                <div className={s.header__list} key={cartItem.variantId}>
                   <CartItem cartItem={cartItem} />
                 </div>
               ))}
