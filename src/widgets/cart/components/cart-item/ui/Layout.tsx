@@ -8,7 +8,8 @@ export const UiCartItem = ({ cartItem }: { cartItem: ICartItem }) => {
         <div className={s.imageWrapper}>
           <img
             className={s.productImage}
-            src={cartItem.image}
+            // src={cartItem.image}
+            src="/d40da9a3a7234235e66d6695d9d7098fc3289872.png"
             alt={cartItem.name}
           />
         </div>

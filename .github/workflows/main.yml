@@ -1,0 +1,36 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs: 
+  build-and-test: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Проверка кода
+        uses: actions/checkout@v3
+
+      - name: Установка Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Установка зависимостей
+        run: npm install
+
+      - name: Запуск тестов
+        run: npm test
+
+      - name: Сборка проекта
+        run: npm run build
+
+      # - name: Deploy to server (опционально)
+      #   if: github.ref == 'refs/heads/main'  # Деплой только при пуше в main
+      #   run: |
+      #     # Команды для деплой (пример: копирует файлы на сервер)
+      #     scp -r dist/ user@your-server:/path/to/app
+      #     ssh user@your-server 'cd /path/to/app && npm restart'
