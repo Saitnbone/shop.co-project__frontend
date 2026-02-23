@@ -18,8 +18,8 @@ export const useAuth = () => {
       if (!res.ok) throw new Error('Failed to fetch user data');
       return res.json();
     },
-    refetchOnWindowFocus: true, 
-    retry: false, 
+    refetchOnWindowFocus: true,
+    retry: false,
     staleTime: 60 * 60 * 1000, // 1 hour
   });
 

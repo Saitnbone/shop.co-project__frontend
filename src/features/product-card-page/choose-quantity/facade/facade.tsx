@@ -1,5 +1,5 @@
-import { UiChooseQuantity } from "../ui/Layout";
+import { UiChooseQuantity } from '../ui/Layout';
 
 export const ChooseQuantity = () => {
-    return <UiChooseQuantity />;
-}
+  return <UiChooseQuantity />;
+};

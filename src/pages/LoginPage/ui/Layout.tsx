@@ -145,23 +145,23 @@ checkSubmissionStatus();
 // }
 
 // export const UiAuthPage = () => {
-  // Начальное состояние для формы
-  // const initialForm: LeadForm = {
-  //   name: '',
-  //   telegram: '',
-  //   email: '',
-  // };
+// Начальное состояние для формы
+// const initialForm: LeadForm = {
+//   name: '',
+//   telegram: '',
+//   email: '',
+// };
 
-  // const validationSchema = {
-  //   email: [
-  //     validationRules.required('Email обязателен'),
-  //     validationRules.email(),
-  //   ],
-  // };
+// const validationSchema = {
+//   email: [
+//     validationRules.required('Email обязателен'),
+//     validationRules.email(),
+//   ],
+// };
 
-  // const submitForm = async () => {
-  //   await authUser();
-  // };
+// const submitForm = async () => {
+//   await authUser();
+// };
 
 //   const submitForm = async () => {
 //   if (!validateForm()) {
@@ -199,11 +199,11 @@ checkSubmissionStatus();
 //   }
 // };
 
-// const submitForm = async () => { 
+// const submitForm = async () => {
 //   try {
-//     await 
+//     await
 //   } catch (error) {
-    
+
 //   }
 // }
 

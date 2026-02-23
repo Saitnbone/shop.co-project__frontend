@@ -7,5 +7,14 @@ import { HappyCustomers } from '@/widgets/main-page-widgets/happy-customers';
 import { Cover } from '@/widgets/main-page-widgets/cover';
 
 export const MainPage = () => {
-  return <UiMainPage cover={<Cover />} slider={<Slider />} newArrivals={<NewArrivals />} topSelling={<TopSelling />} dressStyle={<DressStyle />} happyCustomers={<HappyCustomers />} />;
+  return (
+    <UiMainPage
+      cover={<Cover />}
+      slider={<Slider />}
+      newArrivals={<NewArrivals />}
+      topSelling={<TopSelling />}
+      dressStyle={<DressStyle />}
+      happyCustomers={<HappyCustomers />}
+    />
+  );
 };

@@ -21,7 +21,7 @@ export const UiCreateCommentModal = ({
     (state: RootState) => state.selectedProduct.product
   );
 
-  const  userId  = useSelector((state: RootState) => state.userInfo.userInfo?.id);
+  const userId = useSelector((state: RootState) => state.userInfo.userInfo?.id);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

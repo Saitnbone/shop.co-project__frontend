@@ -4,7 +4,7 @@ import s from '../../styles.module.scss';
 export const UiBurgerIcon: React.FC = () => {
   return (
     <span>
-      <RxHamburgerMenu className={s.burgerIcon}/>
+      <RxHamburgerMenu className={s.burgerIcon} />
     </span>
   );
 };

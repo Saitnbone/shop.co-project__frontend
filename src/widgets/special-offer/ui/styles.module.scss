@@ -3,7 +3,6 @@
   transform: translateY(0);
   opacity: 1;
   pointer-events: all;
-
 }
 
 .fadeOut {
@@ -35,7 +34,11 @@
 }
 
 .text {
-  font-size: clamp(var(--font-size-primary-xxs), 0.7036rem + 0.1905vw, var(--font-size-primary-xs));
+  font-size: clamp(
+    var(--font-size-primary-xxs),
+    0.7036rem + 0.1905vw,
+    var(--font-size-primary-xs)
+  );
 }
 
 .link {

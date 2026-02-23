@@ -5,7 +5,12 @@ import { UiBurgerIcon } from './components/icons-block/BurgerIcon';
 import { UiIconsBlock } from './components/icons-block/IconsBlock';
 import { UiSearchInput } from '@/widgets/header/ui/components/search-input/SearchInput.tsx';
 
-export const UiHeader: React.FC<IUiHeader> = ({ logo, dropDown, cart, toggleDropdown }) => {
+export const UiHeader: React.FC<IUiHeader> = ({
+  logo,
+  dropDown,
+  cart,
+  toggleDropdown,
+}) => {
   return (
     <header className={s.header}>
       <div className={s.headerBlock}>

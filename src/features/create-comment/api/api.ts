@@ -7,14 +7,17 @@ export interface ICreateCommentData {
 
 export const createComment = async (data: ICreateCommentData) => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/comments/create-comment`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify(data),
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/comments/create-comment`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(data),
+      }
+    );
     if (!response.ok) {
       throw new Error('Failed to create comment');
     }

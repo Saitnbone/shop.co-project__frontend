@@ -1,5 +1,5 @@
-import { useState, useCallback, useMemo } from "react";
-import { validationRules } from "./validationRules";
+import { useState, useCallback, useMemo } from 'react';
+import { validationRules } from './validationRules';
 
 export interface ValidationRule {
   validator: (value: string) => string | null;
@@ -21,13 +21,13 @@ export function useFormValidation<T extends Record<string, string>>(
   // Валидация одного поля
   const validateField = useCallback(
     (field: keyof T): string => {
-      const value = String(form[field] || "");
+      const value = String(form[field] || '');
       const rules = schema[field as string] || [];
       for (const rule of rules) {
         const error = rule.validator(value);
         if (error) return error;
       }
-      return "";
+      return '';
     },
     [form, schema]
   );
@@ -93,19 +93,19 @@ export function useFormValidation<T extends Record<string, string>>(
   //   [schema, form, validateField]
   // );
 
-const isFormValid = useMemo(() => {
-  return Object.keys(schema).every((field) => {
-    const value = form[field as keyof T];
-    const error = validateField(field as keyof T);
+  const isFormValid = useMemo(() => {
+    return Object.keys(schema).every((field) => {
+      const value = form[field as keyof T];
+      const error = validateField(field as keyof T);
 
-    const isRequired = schema[field].some(
-      (rule) => rule.validator === validationRules.required().validator
-    );
-    if (!isRequired && !value) return true;
+      const isRequired = schema[field].some(
+        (rule) => rule.validator === validationRules.required().validator
+      );
+      if (!isRequired && !value) return true;
 
-    return !error && value;
-  });
-}, [form, schema, validateField]);
+      return !error && value;
+    });
+  }, [form, schema, validateField]);
 
   // Сброс формы
   const resetForm = useCallback(() => {

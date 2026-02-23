@@ -13,9 +13,9 @@ export type TTopSellingProps = {
 
 export type TTopSellingItem = {
   id: string;
-  name: string; 
+  name: string;
   description: string;
-  image: string; 
+  image: string;
   raiting: number;
   price: number;
 };

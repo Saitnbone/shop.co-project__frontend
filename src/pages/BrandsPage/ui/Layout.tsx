@@ -1,5 +1,5 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-export const UiBrandsPage: FC = () => { 
-    return <div>Brands Page</div>;
-}
+export const UiBrandsPage: FC = () => {
+  return <div>Brands Page</div>;
+};

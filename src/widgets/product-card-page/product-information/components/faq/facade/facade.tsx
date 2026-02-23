@@ -1,5 +1,5 @@
-import { UiProductFAQ } from "../ui/Layout"
+import { UiProductFAQ } from '../ui/Layout';
 
-export const ProductFAQ = () => { 
-    return <UiProductFAQ />
-}
+export const ProductFAQ = () => {
+  return <UiProductFAQ />;
+};

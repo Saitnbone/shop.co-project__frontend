@@ -1,5 +1,5 @@
-import { UiSelectColor } from '../ui/Layout'
+import { UiSelectColor } from '../ui/Layout';
 
-export const SelectColor = () => { 
-    return <UiSelectColor />
-}
+export const SelectColor = () => {
+  return <UiSelectColor />;
+};

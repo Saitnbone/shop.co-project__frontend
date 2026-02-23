@@ -1,3 +1,3 @@
-export const UiProductDetails = () => { 
-    return <div>ProductDetails</div>
-}
+export const UiProductDetails = () => {
+  return <div>ProductDetails</div>;
+};

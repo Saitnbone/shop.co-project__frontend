@@ -1,5 +1,5 @@
-import { UiProductDetails } from "../ui/Layout"
+import { UiProductDetails } from '../ui/Layout';
 
-export const ProductDetails = () => { 
-    return <UiProductDetails />
-}
+export const ProductDetails = () => {
+  return <UiProductDetails />;
+};

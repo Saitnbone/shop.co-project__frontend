@@ -3,7 +3,7 @@ import { FilterProductType } from '@/features/catalog-filters/filter-product-typ
 import { FilterPrices } from '@/features/catalog-filters/filter-prices';
 import { FilterColors } from '@/features/catalog-filters/filter-colors';
 import { FilterSizes } from '@/features/catalog-filters/filter-sizes';
-import {FilterDressStyle} from '@/features/catalog-filters/filter-dress-styles';
+import { FilterDressStyle } from '@/features/catalog-filters/filter-dress-styles';
 import { UiCatalogFilters } from '../ui/Layout';
 import { TFilterProps } from '../types/types';
 

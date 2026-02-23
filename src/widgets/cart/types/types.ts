@@ -14,4 +14,3 @@ export interface ICartItem {
   color: string;
   size: string;
 }
-

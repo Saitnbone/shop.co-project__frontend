@@ -1,5 +1,5 @@
-import { UiRecommendations } from "../ui/Layout"
+import { UiRecommendations } from '../ui/Layout';
 
-export const Recommendations = ( ) => { 
-    return <UiRecommendations />
-}
+export const Recommendations = () => {
+  return <UiRecommendations />;
+};

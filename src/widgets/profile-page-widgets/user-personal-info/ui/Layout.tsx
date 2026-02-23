@@ -172,8 +172,7 @@ export const UiUserPersonalInfo = () => {
           <div className={s.infoCard}>
             <h3 className={s.cardTitle}>Card Info</h3>
             <div className={s.userInformationList}>
-              <div className={s.userInformationItem}>
-              </div>
+              <div className={s.userInformationItem}></div>
             </div>
           </div>
         </div>

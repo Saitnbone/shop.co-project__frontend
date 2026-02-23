@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 
-
 export const LogoUI: React.FC = () => {
   const navigate = useNavigate();
 
@@ -10,7 +9,7 @@ export const LogoUI: React.FC = () => {
   };
 
   return (
-    <div >
+    <div>
       <img loading="lazy" src={logo} alt="Logo" onClick={handleLogoClick} />
     </div>
   );

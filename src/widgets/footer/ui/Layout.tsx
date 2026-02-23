@@ -53,9 +53,7 @@ export const UiFooter: React.FC<TUiFooter> = ({ logo, subscribe }) => {
             ))}
           </div>
           <div className={s.bottom}>
-            <p className={s.textCo}>
-              Shop.co © 2000-2023, All Rights Reserved
-            </p>
+            <p className={s.textCo}>Shop.co © 2000-2023, All Rights Reserved</p>
             <div className={s.payment}>
               <p className={s.paymentCard}>
                 <FaCcVisa />
@@ -79,4 +77,3 @@ export const UiFooter: React.FC<TUiFooter> = ({ logo, subscribe }) => {
     </FullBg>
   );
 };
-    

@@ -1,6 +1,6 @@
 export const validationRules = {
   // Обязательное поле для заполнения
-  required: (message = "Поле обязательное для заполнения") => ({
+  required: (message = 'Поле обязательное для заполнения') => ({
     validator: (value: string) => {
       return !value.trim() ? message : null;
     },
@@ -29,7 +29,7 @@ export const validationRules = {
   //     return !emailRegex.test(value.trim()) ? message : null;
   //   },
   // }),
-  email: (message = "Введите корректный email") => ({
+  email: (message = 'Введите корректный email') => ({
     validator: (value: string) => {
       const trimmed = value.trim();
       if (!trimmed) return null;
@@ -39,7 +39,7 @@ export const validationRules = {
   }),
 
   // Имя (кириллица и латиница)
-  name: (message = "Имя может содержать только буквы, пробелы и дефисы") => ({
+  name: (message = 'Имя может содержать только буквы, пробелы и дефисы') => ({
     validator: (value: string) => {
       const nameRegex = /^[а-яёА-ЯЁa-zA-Z\s-]+$/;
       return !nameRegex.test(value.trim()) ? message : null;
@@ -47,28 +47,28 @@ export const validationRules = {
   }),
 
   // Telegram username
-  telegram: (_message = "Неверный формат Telegram username") => ({
+  telegram: (_message = 'Неверный формат Telegram username') => ({
     validator: (value: string) => {
       let username = value.trim();
 
       // Удаляем @ если есть в начале
-      if (username.startsWith("@")) {
+      if (username.startsWith('@')) {
         username = username.slice(1);
       }
 
       // базовый формат
       if (!/^[a-zA-Z0-9][a-zA-Z0-9_]{4,31}$/.test(username)) {
-        return "Неверный формат Telegram username";
+        return 'Неверный формат Telegram username';
       }
 
       // не заканчивается на _
-      if (username.endsWith("_")) {
-        return "Username не может заканчиваться на подчеркивание";
+      if (username.endsWith('_')) {
+        return 'Username не может заканчиваться на подчеркивание';
       }
 
       // нет двойных подчеркиваний
-      if (username.includes("__")) {
-        return "Username не может содержать двойные подчеркивания";
+      if (username.includes('__')) {
+        return 'Username не может содержать двойные подчеркивания';
       }
 
       return null;

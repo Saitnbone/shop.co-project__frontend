@@ -1,3 +1,3 @@
-export const UiNotFoundPage = () => { 
-  return <div>Page are not found</div>
-}
+export const UiNotFoundPage = () => {
+  return <div>Page are not found</div>;
+};

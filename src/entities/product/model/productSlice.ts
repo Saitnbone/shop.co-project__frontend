@@ -94,6 +94,12 @@ export const productSlice = createSlice({
 
 const selectedProductReducer = productSlice.reducer;
 
-export const { clearProduct, setColor, setActualSizes, setSize, setQuantity, setVariantId } =
-  productSlice.actions;
+export const {
+  clearProduct,
+  setColor,
+  setActualSizes,
+  setSize,
+  setQuantity,
+  setVariantId,
+} = productSlice.actions;
 export { selectedProductReducer };

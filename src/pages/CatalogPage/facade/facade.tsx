@@ -16,7 +16,7 @@ export const CatalogPage: FC = () => {
           filterPrices={filters.priceRange}
           filterColors={filters.colors}
           filterSizes={filters.sizes}
-          filterDressStyles={filters.dressType} 
+          filterDressStyles={filters.dressType}
         />
       }
       catalog={<Catalog />}

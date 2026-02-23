@@ -1,6 +1,6 @@
 export const validationRules = {
   // Обязательное поле для заполнения
-  required: (message = "Поле обязательное для заполнения") => ({
+  required: (message = 'Поле обязательное для заполнения') => ({
     validator: (value: string) => {
       return !value.trim() ? message : null;
     },
@@ -23,7 +23,7 @@ export const validationRules = {
   }),
 
   // Email валидация
-  email: (message = "Введите корректный email") => ({
+  email: (message = 'Введите корректный email') => ({
     validator: (value: string) => {
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       return !emailRegex.test(value.trim()) ? message : null;

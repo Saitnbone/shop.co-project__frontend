@@ -12,7 +12,10 @@ export const UiProductInformation = ({
 
   const tabs = [
     { label: 'Product Details', component: <ProductDetails /> },
-    { label: 'Rating & Reviews', component: <ReviewsAndRatings onWriteReviewClick={onWriteReviewClick} /> },
+    {
+      label: 'Rating & Reviews',
+      component: <ReviewsAndRatings onWriteReviewClick={onWriteReviewClick} />,
+    },
     { label: 'FAQs', component: <ProductFAQ /> },
   ];
 

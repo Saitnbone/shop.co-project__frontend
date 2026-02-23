@@ -1,5 +1,5 @@
-import { UiSelectImage } from "../ui/Layout";
+import { UiSelectImage } from '../ui/Layout';
 
-export const SelectImage = () => { 
-    return <UiSelectImage />;
-}
+export const SelectImage = () => {
+  return <UiSelectImage />;
+};

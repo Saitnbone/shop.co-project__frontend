@@ -12,21 +12,36 @@
   color: var(--color-text-on-dark);
 }
 
-
 .h1 {
-  font-size: clamp(var(--font-size-accent-m-xl), 1.6rem + 2.6667vw, var(--font-size-accent-d-xl)); // 64 - 36
+  font-size: clamp(
+    var(--font-size-accent-m-xl),
+    1.6rem + 2.6667vw,
+    var(--font-size-accent-d-xl)
+  ); // 64 - 36
 }
 
 .h2 {
-  font-size: clamp(var(--font-size-accent-m-l), 1.6286rem + 1.5238vw, var(--font-size-accent-d-l)); // 48 - 32
+  font-size: clamp(
+    var(--font-size-accent-m-l),
+    1.6286rem + 1.5238vw,
+    var(--font-size-accent-d-l)
+  ); // 48 - 32
 }
 
 .h3 {
-  font-size: clamp(var(--font-size-accent-m-m), 1.1286rem + 1.5238vw, var(--font-size-accent-d-m)); // 40 - 24
+  font-size: clamp(
+    var(--font-size-accent-m-m),
+    1.1286rem + 1.5238vw,
+    var(--font-size-accent-d-m)
+  ); // 40 - 24
 }
 
 .h4 {
-  font-size: clamp(var(--font-size-accent-m-l), 1.8143rem + 0.7619vw, var(--font-size-accent-d-m)); // 40 - 32 - да, тут какие-то траблы в макете
+  font-size: clamp(
+    var(--font-size-accent-m-l),
+    1.8143rem + 0.7619vw,
+    var(--font-size-accent-d-m)
+  ); // 40 - 32 - да, тут какие-то траблы в макете
 }
 
 @media (max-width: 390px) {
