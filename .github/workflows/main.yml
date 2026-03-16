@@ -28,8 +28,9 @@ jobs:
       - name: Проверка prettier
         run: npm run format
 
-      - name: Запуск тестов
-        run: npm run test
+      # Отключение тестов на время разработки, так как их нет
+      # - name: Запуск тестов
+      #   run: npm run test
 
       - name: Проверка обновления версии
         if: github.event_name == 'pull_request' && github.base_ref == 'main'
