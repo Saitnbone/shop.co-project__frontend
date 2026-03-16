@@ -1,12 +1,12 @@
 import { addToCart } from '../api/api';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/app/providers/store';
+import { RootState, AppDispatch } from '@/app/providers/store';
+import { fetchCartData } from '@/shared/slice/cartSlice';
 import { openModal } from '@/shared/ui/notification-modal/store/notificationModalStore';
 import s from './styles.module.scss';
 
 export const UiAddToCart = () => {
-  const dispatch = useDispatch();
-
+  const dispatch = useDispatch<AppDispatch>();
   const userInfo = useSelector((state: RootState) => state.userInfo.userInfo);
 
   const variantId = useSelector(
@@ -47,7 +47,7 @@ export const UiAddToCart = () => {
         variantId: variantId,
         quantity: quantity,
       });
-
+      dispatch(fetchCartData(userInfo.id));
       dispatch(
         openModal({
           titleText: 'Success!',
@@ -57,7 +57,6 @@ export const UiAddToCart = () => {
       );
     } catch (error) {
       console.error('Error adding to cart:', error);
-      throw error;
     }
   };
 

@@ -10,7 +10,13 @@
     "paths": {
       "@/*": ["src/*"],
       "@ui/*": ["src/shared/ui/*"],
-      "@assets/*": ["src/shared/assets/*"]
+      "@assets/*": ["src/shared/assets/*"],
+      "@features/*": ["src/features/*"],
+      "@entities/*": ["src/entities/*"],
+      "@widgets/*": ["src/widgets/*"],
+      "@pages/*": ["src/pages/*"],
+      "@app/*": ["src/app/*"],
+      "@shared/*": ["src/shared/*"]
     },
 
     /* Bundler mode */
