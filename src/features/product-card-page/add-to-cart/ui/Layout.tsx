@@ -18,7 +18,6 @@ export const UiAddToCart = () => {
   );
 
   const handleAddToCart = async () => {
-    console.log('Adding to cart:', { variantId, quantity });
     if (!userInfo || !userInfo.id) {
       dispatch(
         openModal({

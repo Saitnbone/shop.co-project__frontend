@@ -33,7 +33,7 @@ jobs:
       #   run: npm run test
 
       - name: Проверка обновления версии
-        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        if: github.event_name == 'pull_request' && (github.base_ref == 'develop' || github.base_ref == 'main')
         run: |
           if git show HEAD^:package.json > /dev/null 2>&1; then
             PREV_VERSION=$(git show HEAD^:package.json | grep '"version"' | head -1 | awk -F '"' '{print $4}')
