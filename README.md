@@ -70,3 +70,5 @@ npm run dev
 - Use of semantic tags, which also affects better SEO.
 
 [Link to layout](<https://www.figma.com/design/CkASwGlVLwskObZC31RCuY/E-commerce-Website-Template-(Freebie)-(Community)?node-id=0-1&t=5XDfBwuAVXJS1KC8-0>)
+
+.

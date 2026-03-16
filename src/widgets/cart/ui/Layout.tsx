@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/app/providers/store';
-import { CartApi } from '@/features/cart/api';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from '@/app/providers/store';
+import { fetchCartData } from '@/shared/slice/cartSlice';
 import { useNavigate } from 'react-router-dom';
-import { ICartItem, UiCartProps } from '../types/types';
+import { UiCartProps } from '../types/types';
 import { FaGithub, FaInstagram } from 'react-icons/fa';
 import s from './style.module.scss';
 
@@ -13,9 +13,12 @@ export const UiCart = ({
   CartItem,
   LogoUI,
 }: UiCartProps) => {
-  const [cartData, setCartData] = useState<ICartItem[]>([]);
-  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+  const { items: cartData, totalCost } = useSelector(
+    (state: RootState) => state.cart
+  );
   const userId = useSelector((state: RootState) => state.userInfo.userInfo?.id);
+  const navigate = useNavigate();
 
   const handleGoToCart = () => {
     toggleDropdown();
@@ -23,19 +26,10 @@ export const UiCart = ({
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (!userId) return;
-      try {
-        const data = await CartApi.getCartData(userId);
-        console.log('Cart data:', data);
-        setCartData(data);
-      } catch (error) {
-        console.error('Error fetching cart data:', error);
-      }
-    };
-
-    fetchData();
-  }, [userId]);
+    if (userId) {
+      dispatch(fetchCartData(userId));
+    }
+  }, [userId, dispatch]);
 
   return (
     <div className={`${s.sidebar} ${open ? s.sidebar_open : ''}`}>
@@ -57,13 +51,9 @@ export const UiCart = ({
           </div>
           <div className={s.sidebarMenu__footer}>
             <hr />
-            <div className={s.sidebarMenu__sale}>
-              <span className={s.sidebarMenu__label}>Sale</span>
-              <span className={s.sidebarMenu__salePrice}>10$</span>
-            </div>
             <div className={s.sidebarMenu__total}>
               <span className={s.sidebarMenu__label}>Total cost</span>
-              <span className={s.sidebarMenu__totalPrice}>120$</span>
+              <span className={s.sidebarMenu__totalPrice}>{totalCost}$</span>
             </div>
             <div className={s.sidebarMenu__checkout}>
               <button
