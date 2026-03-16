@@ -9,34 +9,42 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+    env:
+      HUSKY: 0
     steps:
-      - name: Проверка кода
-        uses: actions/checkout@v3
-
-      - name: Установка Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
         with:
-          node-version: '22'
+          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Установка зависимостей
-        run: npm install
+        run: npm ci
 
-      - name: Линтинг кода
+      - name: Проверка линтинга
         run: npm run lint
 
       - name: Проверка prettier
-        run: npm run format:check
+        run: npm run format
 
       - name: Запуск тестов
-        run: npm test
+        run: npm run test
 
-      - name: Сборка проекта
-        run: npm run build
-
-      # - name: Deploy to server (опционально)
-      #   if: github.ref == 'refs/heads/main'  # Деплой только при пуше в main
-      #   run: |
-      #     # Команды для деплой (пример: копирует файлы на сервер)
-      #     scp -r dist/ user@your-server:/path/to/app
-      #     ssh user@your-server 'cd /path/to/app && npm restart'
+      - name: Проверка обновления версии
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        run: |
+          if git show HEAD^:package.json > /dev/null 2>&1; then
+            PREV_VERSION=$(git show HEAD^:package.json | grep '"version"' | head -1 | awk -F '"' '{print $4}')
+            CUR_VERSION=$(cat package.json | grep '"version"' | head -1 | awk -F '"' '{print $4}')
+            echo "Предыдущая версия: $PREV_VERSION"
+            echo "Текущая версия: $CUR_VERSION"
+            if [ "$PREV_VERSION" = "$CUR_VERSION" ]; then
+              echo "❌ Версия не изменена! Обновите версию в package.json."
+              exit 1
+            else
+              echo "✅ Версия обновлена: $PREV_VERSION → $CUR_VERSION"
+            fi
+          else
+            echo "⚠️ Нет предыдущего коммита, проверка версии пропущена."
+          fi

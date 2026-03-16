@@ -1,1 +1,9 @@
+# Проверка релиза при пуше
+if git log --oneline origin/main..HEAD | grep -q "feat\|fix\|chore\|docs\|style\|refactor\|test"; then
+  echo "🔄 Есть новые коммиты — запускаем релиз..."
+  npm run release
+else
+  echo "⏭️ Нет новых коммитов для релиза."
+fi
+
 npm run build
