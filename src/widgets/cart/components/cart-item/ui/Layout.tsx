@@ -78,6 +78,8 @@ export const UiCartItem = ({ cartItem }: { cartItem: ICartItem }) => {
         return;
       }
       const response = await CartApi.removeCartItem(userId, variantId);
+      dispatch(removeItemOptimistic(variantId));
+      dispatch(fetchCartData(userId));
       console.log('Cart item quantity updated:', response);
     } catch (error) {
       console.error('Error updating cart item quantity:', error);
