@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/Saitnbone/shop.co-project__frontend/compare/v0.2.10...v0.2.11) (2026-03-17)
+
+
+### Bug Fixes
+
+* remove item in cart ([336a74b](https://github.com/Saitnbone/shop.co-project__frontend/commit/336a74be60cd1b009802e2a4c0d173ceceeca60b))
+
+### [0.2.10](https://github.com/Saitnbone/shop.co-project__frontend/compare/v0.2.9...v0.2.10) (2026-03-16)
+
+
+### Features
+
+* delete cart item redux state ([8deb7b0](https://github.com/Saitnbone/shop.co-project__frontend/commit/8deb7b02217039f70386444962717c086006788c))
+
 ### 0.2.9 (2026-03-16)
 
 

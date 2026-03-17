@@ -1,12 +1,17 @@
 import { useState, useRef, useCallback } from 'react';
 import { CartApi } from '@/features/cart/api';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/app/providers/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from '@/app/providers/store';
+import {
+  addItemOptimistic,
+  removeItemOptimistic,
+  fetchCartData,
+} from '@/shared/slice/cartSlice';
 import { ICartItem } from '../types/types';
 import s from './style.module.scss';
 
 export const UiCartItem = ({ cartItem }: { cartItem: ICartItem }) => {
-  // Информация о пользователе для API
+  const dispatch = useDispatch<AppDispatch>();
   const userId = useSelector((state: RootState) => state.userInfo.userInfo?.id);
   const [localQuantity, setLocalQuantity] = useState(cartItem.quantity);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
@@ -18,6 +23,8 @@ export const UiCartItem = ({ cartItem }: { cartItem: ICartItem }) => {
       const delta = newQuantity - initialQuantityRef.current;
       if (delta === 0) return;
 
+      dispatch(addItemOptimistic({ ...cartItem, quantity: delta }));
+
       try {
         let response;
         if (delta > 0) {
@@ -26,21 +33,24 @@ export const UiCartItem = ({ cartItem }: { cartItem: ICartItem }) => {
             cartItem.variantId,
             delta
           );
+          dispatch(fetchCartData(userId));
         } else {
           response = await CartApi.removeQuantityCartItem(
             userId,
             cartItem.variantId,
             -delta
           );
+          dispatch(fetchCartData(userId));
         }
         console.log('Quantity updated:', response);
         initialQuantityRef.current = newQuantity;
       } catch (error) {
         console.error('Error updating quantity:', error);
         setLocalQuantity(initialQuantityRef.current);
+        dispatch(removeItemOptimistic(cartItem.variantId));
       }
     },
-    [userId, cartItem.variantId]
+    [userId, dispatch, cartItem]
   );
 
   const handleQuantityChange = useCallback(
@@ -68,6 +78,8 @@ export const UiCartItem = ({ cartItem }: { cartItem: ICartItem }) => {
         return;
       }
       const response = await CartApi.removeCartItem(userId, variantId);
+      dispatch(removeItemOptimistic(variantId));
+      dispatch(fetchCartData(userId));
       console.log('Cart item quantity updated:', response);
     } catch (error) {
       console.error('Error updating cart item quantity:', error);
