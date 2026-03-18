@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.13](https://github.com/Saitnbone/shop.co-project__frontend/compare/v0.2.12...v0.2.13) (2026-03-18)
+
+
+### Features
+
+* items in cart page integration baackend ([a3957c5](https://github.com/Saitnbone/shop.co-project__frontend/commit/a3957c57845847b1e26278cdae373e833a8b7509))
+
 ### [0.2.12](https://github.com/Saitnbone/shop.co-project__frontend/compare/v0.2.11...v0.2.12) (2026-03-17)
 
 ### [0.2.11](https://github.com/Saitnbone/shop.co-project__frontend/compare/v0.2.10...v0.2.11) (2026-03-17)
